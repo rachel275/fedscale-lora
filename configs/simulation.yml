@@ -1,0 +1,125 @@
+```yaml
+# Single-host FedScale simulation configuration
+#
+# Intended setup:
+#   - One physical machine
+#   - One aggregator process
+#   - Four executor processes
+#   - Multiple logical federated clients
+#   - CPU-only real training
+#
+# The FedScale repository is mounted inside the container at:
+#   /opt/FedScale
+
+# ============================================================
+# Container configuration
+# ============================================================
+
+use_container: docker
+
+# One port for the aggregator followed by one port per executor.
+#
+# Aggregator: 20010
+# Executor 1: 20011
+# Executor 2: 20012
+# Executor 3: 20013
+# Executor 4: 20014
+ports:
+  - 20010
+  - 20011
+  - 20012
+  - 20013
+  - 20014
+
+# Docker network used if the processes are later split into
+# separate containers.
+container_network: fedscale-net
+
+# The FedScale benchmark directory mounted inside the container.
+data_path: /opt/FedScale/benchmark
+
+# ============================================================
+# Cluster configuration
+# ============================================================
+
+# All processes initially run on the same physical machine.
+ps_ip: 127.0.0.1
+
+# Four executor processes on the local machine.
+#
+# This controls physical execution concurrency.
+# It does not control the total number of logical FL clients.
+worker_ips:
+  - 127.0.0.1:[4]
+
+# Directory containing the container-specific FedScale wrappers.
+exp_path: /opt/FedScale/examples/containerization
+
+executor_entry: executor_ctnr.py
+aggregator_entry: aggregator_ctnr.py
+
+auth:
+  ssh_user: ""
+  ssh_private_key: ~/.ssh/id_rsa
+
+# Commands run before launching the FedScale processes.
+setup_commands:
+  - export FEDSCALE_HOME=/opt/FedScale
+  - export PYTHONPATH=/opt/FedScale:$PYTHONPATH
+  - export OMP_NUM_THREADS=1
+  - export MKL_NUM_THREADS=1
+  - export OPENBLAS_NUM_THREADS=1
+
+# ============================================================
+# Federated-learning experiment configuration
+# ============================================================
+
+job_conf:
+  # Logs are written under:
+  # /workspace/results/fedscale_single_host/<timestamp>
+  - job_name: fedscale_single_host
+  - log_path: /workspace/results
+
+  # Number of logical clients selected in every FL round.
+  #
+  # This is independent of the four executor processes above.
+  - num_participants: 4
+
+  # Initial smoke-test workload.
+  - data_set: cifar10
+  - data_dir: /opt/FedScale/benchmark/dataset/data
+
+  - model: resnet18
+  - model_zoo: torchcv
+
+  # Run a very small experiment first.
+  - rounds: 2
+  - eval_interval: 1
+
+  # Do one small local-training step per selected client.
+  - local_steps: 1
+  - batch_size: 4
+  - test_bsz: 4
+  - learning_rate: 0.001
+
+  # Keep all clients for this smoke test.
+  - filter_less: 0
+
+  # Avoid additional DataLoader processes initially.
+  - num_loaders: 0
+
+  # CPU-only execution for portability.
+  - use_cuda: false
+
+  # Do not write model checkpoints during the initial test.
+  - save_checkpoint: false
+
+  # FedScale simulation mode.
+  - experiment_mode: simulation
+
+  # Avoid scheduling additional clients beyond the requested count.
+  - overcommitment: 1.0
+
+  # Standard federated averaging.
+  - gradient_policy: fed-avg
+```

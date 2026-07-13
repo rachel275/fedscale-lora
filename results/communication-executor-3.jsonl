@@ -1,0 +1,4 @@
+{"client_id": 98, "direction": "download", "executor_id": "3", "metadata_bytes": 72, "method": "full", "payload_type": "global_model", "raw_model_bytes": 44871832, "round": 1, "serialized_bytes": 44907562, "timestamp": 1783972303.286887}
+{"client_id": 98, "direction": "upload", "executor_id": "3", "method": "full", "payload_type": "client_training_result", "raw_update_bytes": 44871832, "round": 1, "serialized_bytes": 44879628, "tensor_count": 122, "timestamp": 1783972303.7737637}
+{"client_id": 220, "direction": "download", "executor_id": "3", "metadata_bytes": 72, "method": "full", "payload_type": "global_model", "raw_model_bytes": 44871832, "round": 1, "serialized_bytes": 44907562, "timestamp": 1783972303.9316373}
+{"client_id": 220, "direction": "upload", "executor_id": "3", "method": "full", "payload_type": "client_training_result", "raw_update_bytes": 44871832, "round": 1, "serialized_bytes": 44879628, "tensor_count": 122, "timestamp": 1783972304.2051804}

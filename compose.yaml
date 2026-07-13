@@ -1,0 +1,46 @@
+services:
+  fedscale:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    image: fedscale-lora-dev
+
+    container_name: fedscale-lora
+
+    working_dir: /opt/FedScale
+
+    volumes:
+      # Your editable FedScale source tree.
+      - /users/rachs/FedScale:/opt/FedScale
+
+      # Experiment configurations.
+      - ./configs:/workspace/configs
+
+      # Prepared datasets and client mappings.
+      - ./data:/workspace/data
+
+      # Logs, traces and result files.
+      - ./results:/workspace/results
+
+    environment:
+      FEDSCALE_HOME: /opt/FedScale
+      PYTHONPATH: /opt/FedScale
+      PYTHONUNBUFFERED: "1"
+
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      NUMEXPR_NUM_THREADS: "1"
+
+    # Keep the container attached to the terminal.
+    stdin_open: true
+    tty: true
+
+    # Allows localhost-based FedScale processes to communicate normally.
+    network_mode: host
+
+    # Prevent shared-memory errors from PyTorch DataLoader workers.
+    shm_size: "8gb"
+
+    command: /bin/bash

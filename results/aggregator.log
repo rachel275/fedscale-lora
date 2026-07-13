@@ -1,0 +1,32 @@
+(07-13) 19:50:48 INFO     [aggregator.py:44] Job args Namespace(job_name='femnist_local', log_path='/workspace/results', wandb_token='', ps_ip='127.0.0.1', ps_port='20010', this_rank=0, connection_timeout=60, experiment_mode='simulation', engine='pytorch', num_executors=4, executor_configs='127.0.0.1:[1]', num_participants=4, data_map_file='/opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv', use_cuda=False, cuda_device=None, time_stamp='logs', task='cv', device_avail_file='/opt/FedScale/benchmark/dataset/data/device_info/client_behave_trace', clock_factor=2.4368231046931412, model_zoo='torchcv', data_dir='/opt/FedScale/benchmark/dataset/data/femnist', device_conf_file='/opt/FedScale/benchmark/dataset/data/device_info/client_device_capacity', model='resnet18', data_set='femnist', sample_mode='random', filter_less=21, filter_more=1000000000000000.0, train_uniform=False, conf_path='~/dataset/', overcommitment=1.3, model_size=65536, round_threshold=30, round_penalty=2.0, clip_bound=0.9, blacklist_rounds=-1, blacklist_max_len=0.3, embedding_file='glove.840B.300d.txt', input_shape=[1, 3, 28, 28], save_checkpoint=True, rounds=2, local_steps=1, batch_size=4, test_bsz=4, backend='gloo', learning_rate=0.05, min_learning_rate=5e-05, input_dim=0, output_dim=0, dump_epoch=10000000000.0, decay_factor=0.98, decay_round=10, num_loaders=0, eval_interval=1, sample_seed=233, test_ratio=1.0, loss_decay=0.2, exploration_min=0.3, cut_off_util=0.05, gradient_policy=None, yogi_eta=0.003, yogi_tau=1e-08, yogi_beta=0.9, yogi_beta2=0.99, qfed_q=1.0, proxy_mu=0.1, cfg_file='./utils/rcnn/cfgs/res101.yml', test_output_dir='./logs/server', train_size_file='', test_size_file='', data_cache='', backbone='./resnet50.pth', malicious_factor=1000000000000000.0, max_concurrency=10, max_staleness=5, noise_factor=0.1, clip_threshold=3.0, target_delta=0.0001, pacer_delta=5, pacer_step=20, exploration_alpha=0.3, exploration_factor=0.9, exploration_decay=0.98, sample_window=5.0, line_by_line=False, clf_block_size=32, mlm=False, mlm_probability=0.15, overwrite_cache=False, block_size=64, weight_decay=0, adam_epsilon=1e-08, vocab_token_size=10000, vocab_tag_size=500, epsilon=0.9, gamma=0.9, memory_capacity=2000, target_replace_iter=15, n_actions=2, n_states=4, num_classes=35, train_manifest='data/train_manifest.csv', test_manifest='data/test_manifest.csv', sample_rate=16000, labels_path='labels.json', window_size=0.02, window_stride=0.01, window='hamming', hidden_size=256, hidden_layers=7, rnn_type='lstm', finetune=False, speed_volume_perturb=False, spec_augment=False, noise_dir=None, noise_prob=0.4, noise_min=0.0, noise_max=0.5, bidirectional=True, num_class=62)
+(07-13) 19:50:49 INFO     [aggregator.py:164] Initiating control plane communication ...
+(07-13) 19:50:49 INFO     [aggregator.py:187] %%%%%%%%%% Opening aggregator server using port [::]:20010 %%%%%%%%%%
+(07-13) 19:50:49 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 19:50:49 INFO     [aggregator.py:979] Start monitoring events ...
+(07-13) 19:50:54 INFO     [aggregator.py:321] Received executor 1 information, 1/1
+(07-13) 19:50:54 INFO     [aggregator.py:278] Loading 2800 client traces ...
+(07-13) 19:50:54 INFO     [aggregator.py:307] Info of all feasible clients {'total_feasible_clients': 2799, 'total_num_samples': 637858}
+(07-13) 19:50:54 INFO     [aggregator.py:585] Wall clock: 0 s, round: 1, Planned participants: 0, Succeed participants: 0, Training loss: 0.0
+(07-13) 19:50:54 INFO     [aggregator.py:321] Received executor 3 information, 2/1
+(07-13) 19:50:54 INFO     [client_manager.py:194] Wall clock time: 0, 831 clients online, 1968 clients offline
+(07-13) 19:50:54 INFO     [aggregator.py:609] Selected participants to run: [1175, 98, 1304, 220]
+(07-13) 19:50:54 INFO     [aggregator.py:321] Received executor 4 information, 3/1
+(07-13) 19:50:54 INFO     [aggregator.py:321] Received executor 2 information, 4/1
+(07-13) 19:50:55 INFO     [aggregator.py:927] Issue EVENT (update_model) to EXECUTOR (3)
+(07-13) 19:50:56 INFO     [aggregator.py:927] Issue EVENT (update_model) to EXECUTOR (1)
+(07-13) 19:50:57 INFO     [aggregator.py:927] Issue EVENT (model_test) to EXECUTOR (3)
+(07-13) 19:50:57 INFO     [aggregator.py:927] Issue EVENT (model_test) to EXECUTOR (1)
+(07-13) 19:51:41 INFO     [aggregator.py:550] FL Testing in round: 1, virtual_clock: 0.0, results: {'round': 1, 'clock': 0.0, 'top_1': 0.030463316681359584, 'top_5': 0.0958468018415124, 'loss': 4.171068952179328}
+(07-13) 19:51:41 INFO     [aggregator.py:705] Saved model checkpoint to /workspace/results/logs/femnist_local/logs/aggregator/model_0.npy.pt
+(07-13) 19:51:42 INFO     [aggregator.py:927] Issue EVENT (client_train) to EXECUTOR (1)
+(07-13) 19:51:42 INFO     [aggregator.py:927] Issue EVENT (client_train) to EXECUTOR (3)
+(07-13) 19:51:43 INFO     [aggregator.py:927] Issue EVENT (client_train) to EXECUTOR (1)
+(07-13) 19:51:43 INFO     [aggregator.py:927] Issue EVENT (client_train) to EXECUTOR (3)
+(07-13) 19:51:44 INFO     [aggregator.py:585] Wall clock: 68 s, round: 2, Planned participants: 5, Succeed participants: 4, Training loss: 4.790005341172218
+(07-13) 19:51:44 INFO     [client_manager.py:194] Wall clock time: 68, 961 clients online, 1838 clients offline
+(07-13) 19:51:44 INFO     [aggregator.py:609] Selected participants to run: [2094, 678, 264, 2367]
+(07-13) 19:51:44 INFO     [aggregator.py:1024] Terminating the aggregator ...
+(07-13) 19:51:44 INFO     [aggregator.py:927] Issue EVENT (terminate_executor) to EXECUTOR (1)
+(07-13) 19:51:45 INFO     [aggregator.py:927] Issue EVENT (terminate_executor) to EXECUTOR (4)
+(07-13) 19:51:45 INFO     [aggregator.py:927] Issue EVENT (terminate_executor) to EXECUTOR (2)
+(07-13) 19:51:45 INFO     [aggregator.py:927] Issue EVENT (terminate_executor) to EXECUTOR (3)

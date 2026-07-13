@@ -1,0 +1,1371 @@
+(07-13) 13:31:22 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 13:31:22 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 13:31:22 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 13:31:22 INFO     [executor.py:77] (EXECUTOR:1) is setting up environ ...
+(07-13) 13:31:22 INFO     [executor.py:77] (EXECUTOR:4) is setting up environ ...
+(07-13) 13:31:23 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 13:31:23 INFO     [executor.py:77] (EXECUTOR:2) is setting up environ ...
+(07-13) 13:31:23 INFO     [executor.py:77] (EXECUTOR:3) is setting up environ ...
+(07-13) 13:31:23 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 13:31:23 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 13:31:23 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 13:31:23 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 13:31:23 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 13:31:23 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 13:31:23 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 13:31:23 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 13:31:23 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 13:31:23 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 13:31:23 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 13:31:23 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 13:31:24 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 13:31:24 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 13:31:24 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 13:31:24 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 13:31:24 INFO     [executor.py:404] Start monitoring events ...
+(07-13) 13:31:24 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:24 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 13:31:24 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 13:31:24 INFO     [executor.py:404] Start monitoring events ...
+(07-13) 13:31:24 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:24 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 13:31:24 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 13:31:24 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 13:31:24 INFO     [executor.py:404] Start monitoring events ...
+(07-13) 13:31:24 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:24 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 13:31:24 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 13:31:24 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 13:31:24 INFO     [executor.py:404] Start monitoring events ...
+(07-13) 13:31:24 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:29 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:29 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:29 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:29 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:34 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:34 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:34 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:34 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:39 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:39 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:39 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:39 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:44 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:44 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:44 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:44 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:49 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:49 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:49 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:49 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:54 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:54 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:54 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:54 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:59 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:59 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:59 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:31:59 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:04 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:04 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:04 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:04 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:09 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:09 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:09 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:09 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:14 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:14 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:14 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:14 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:19 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:19 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:19 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:19 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:24 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:24 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:24 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:24 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:29 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:29 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:29 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:29 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:34 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:34 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:34 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:34 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:39 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:39 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:39 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:39 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:44 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:44 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:44 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:44 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:49 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:49 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:49 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:49 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:54 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:54 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:54 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:54 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:59 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:59 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:59 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:32:59 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:04 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:04 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:04 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:04 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:09 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:09 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:09 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:09 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:14 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:14 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:14 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:14 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:19 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:19 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:19 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:19 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:24 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:24 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:24 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:24 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:29 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:29 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:29 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:29 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:34 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:34 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:34 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:34 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:39 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:39 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:39 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:39 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:44 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:44 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:44 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:44 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:49 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:49 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:49 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:49 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:54 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:54 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:54 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:54 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:59 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:59 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:59 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:33:59 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:04 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:04 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:04 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:04 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:35 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 13:34:35 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 13:34:35 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 13:34:35 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 13:34:35 INFO     [executor.py:77] (EXECUTOR:4) is setting up environ ...
+(07-13) 13:34:35 INFO     [executor.py:77] (EXECUTOR:1) is setting up environ ...
+(07-13) 13:34:35 INFO     [executor.py:77] (EXECUTOR:3) is setting up environ ...
+(07-13) 13:34:35 INFO     [executor.py:77] (EXECUTOR:2) is setting up environ ...
+(07-13) 13:34:35 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 13:34:35 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 13:34:35 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 13:34:35 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 13:34:35 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 13:34:35 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 13:34:35 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 13:34:35 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 13:34:35 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 13:34:35 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 13:34:35 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 13:34:35 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 13:34:36 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 13:34:36 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 13:34:36 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 13:34:36 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 13:34:36 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 13:34:36 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 13:34:36 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 13:34:36 INFO     [executor.py:404] Start monitoring events ...
+(07-13) 13:34:36 INFO     [executor.py:404] Start monitoring events ...
+(07-13) 13:34:36 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:36 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:36 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 13:34:36 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 13:34:36 INFO     [executor.py:404] Start monitoring events ...
+(07-13) 13:34:36 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:36 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 13:34:36 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 13:34:36 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 13:34:36 INFO     [executor.py:404] Start monitoring events ...
+(07-13) 13:34:36 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:41 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:41 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:41 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:41 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:46 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:46 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:46 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:46 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:51 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:51 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:51 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:51 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:56 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:56 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:56 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:34:56 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:01 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:01 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:01 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:01 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:06 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:06 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:06 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:06 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:11 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:11 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:11 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:11 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:16 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:16 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:16 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:16 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:21 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:21 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:21 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 13:35:21 WARNING  [executor.py:388] Failed to connect to aggregator <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+	debug_error_string = "UNAVAILABLE:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:20010: Failed to connect to remote host: Connection refused"
+>. Will retry in 5 sec.
+(07-13) 14:14:36 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 14:14:36 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 14:14:36 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 14:14:36 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 14:14:36 INFO     [executor.py:77] (EXECUTOR:2) is setting up environ ...
+(07-13) 14:14:36 INFO     [executor.py:77] (EXECUTOR:1) is setting up environ ...
+(07-13) 14:14:36 INFO     [executor.py:77] (EXECUTOR:3) is setting up environ ...
+(07-13) 14:14:36 INFO     [executor.py:77] (EXECUTOR:4) is setting up environ ...
+(07-13) 14:14:37 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 14:14:37 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 14:14:37 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 14:14:37 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 14:14:37 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 14:14:37 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 14:14:37 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 14:14:37 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 14:14:37 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 14:14:37 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 14:14:37 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 14:14:37 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 14:14:38 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 14:14:38 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 14:14:38 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 14:14:38 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 14:14:38 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 14:14:38 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 14:14:38 INFO     [executor.py:404] Start monitoring events ...
+(07-13) 14:14:38 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 14:14:38 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 14:14:38 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 14:14:38 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 14:14:38 INFO     [executor.py:404] Start monitoring events ...
+(07-13) 14:14:38 INFO     [executor.py:404] Start monitoring events ...
+(07-13) 14:14:38 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 14:14:38 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 14:14:38 INFO     [executor.py:404] Start monitoring events ...
+(07-13) 14:15:20 INFO     [model_test_module.py:307] Rank 1: Test set: Average loss: 4.1711, Top-1 Accuracy: 622.0/20418 (0.0305), Top-5 Accuracy: 0.0958
+(07-13) 14:15:20 INFO     [torch_client.py:264] Test results: Eval_time 39.708, test_loss 4.1711, test_accuracy 3.05%, test_5_accuracy 9.58% 
+
+(07-13) 14:15:22 INFO     [executor.py:458] Caught exception <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Stream removed (Socket closed)"
+	debug_error_string = "UNAVAILABLE:Stream removed (Socket closed)"
+> from aggregator, terminating executor 3 ...
+(07-13) 14:15:22 INFO     [executor.py:458] Caught exception <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Stream removed (Socket closed)"
+	debug_error_string = "UNAVAILABLE:Stream removed (Socket closed)"
+> from aggregator, terminating executor 4 ...
+(07-13) 14:15:22 INFO     [executor.py:458] Caught exception <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Stream removed (Socket closed)"
+	debug_error_string = "UNAVAILABLE:Stream removed (Socket closed)"
+> from aggregator, terminating executor 2 ...
+(07-13) 14:15:22 INFO     [executor.py:458] Caught exception <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Stream removed (Socket closed)"
+	debug_error_string = "UNAVAILABLE:Stream removed (Socket closed)"
+> from aggregator, terminating executor 1 ...
+(07-13) 14:15:22 INFO     [executor.py:256] Terminating the executor ...
+(07-13) 14:15:22 INFO     [executor.py:256] Terminating the executor ...
+(07-13) 14:15:22 INFO     [executor.py:256] Terminating the executor ...
+(07-13) 14:15:22 INFO     [executor.py:256] Terminating the executor ...
+(07-13) 14:15:22 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 14:15:22 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 14:15:22 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 14:15:22 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 14:35:12 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 14:35:12 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 14:35:12 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 14:35:12 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 14:35:12 INFO     [executor.py:77] (EXECUTOR:2) is setting up environ ...
+(07-13) 14:35:12 INFO     [executor.py:77] (EXECUTOR:4) is setting up environ ...
+(07-13) 14:35:12 INFO     [executor.py:77] (EXECUTOR:1) is setting up environ ...
+(07-13) 14:35:13 INFO     [executor.py:77] (EXECUTOR:3) is setting up environ ...
+(07-13) 14:35:13 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 14:35:13 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 14:35:13 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 14:35:13 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 14:35:13 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 14:35:13 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 14:35:13 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 14:35:13 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 14:35:13 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 14:35:13 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 14:35:13 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 14:35:13 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 14:35:14 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 14:35:14 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 14:35:14 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 14:35:14 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 14:35:14 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 14:35:14 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 14:35:14 INFO     [executor.py:404] Start monitoring events ...
+(07-13) 14:35:14 INFO     [executor.py:404] Start monitoring events ...
+(07-13) 14:35:14 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 14:35:14 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 14:35:14 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 14:35:14 INFO     [executor.py:404] Start monitoring events ...
+(07-13) 14:35:14 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 14:35:14 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 14:35:14 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 14:35:14 INFO     [executor.py:404] Start monitoring events ...
+(07-13) 14:36:01 INFO     [model_test_module.py:307] Rank 2: Test set: Average loss: 4.1701, Top-1 Accuracy: 641.0/20418 (0.0314), Top-5 Accuracy: 0.0986
+(07-13) 14:36:01 INFO     [torch_client.py:264] Test results: Eval_time 43.7361, test_loss 4.1701, test_accuracy 3.14%, test_5_accuracy 9.86% 
+
+(07-13) 14:36:01 INFO     [model_test_module.py:307] Rank 4: Test set: Average loss: 4.1713, Top-1 Accuracy: 628.0/20418 (0.0308), Top-5 Accuracy: 0.0931
+(07-13) 14:36:01 INFO     [torch_client.py:264] Test results: Eval_time 43.5282, test_loss 4.1713, test_accuracy 3.08%, test_5_accuracy 9.31% 
+
+(07-13) 14:36:02 INFO     [torch_client.py:49] Start to train (CLIENT: 98) ...
+(07-13) 14:36:02 INFO     [torch_client.py:84] Training of (CLIENT: 98) completes, {'client_id': 98, 'moving_loss': 4.534597277641296, 'trained_size': 4, 'success': True}
+(07-13) 14:36:03 INFO     [torch_client.py:49] Start to train (CLIENT: 1175) ...
+(07-13) 14:36:03 INFO     [torch_client.py:84] Training of (CLIENT: 1175) completes, {'client_id': 1175, 'moving_loss': 5.020142674446106, 'trained_size': 4, 'success': True}
+(07-13) 14:36:03 INFO     [torch_client.py:49] Start to train (CLIENT: 1304) ...
+(07-13) 14:36:03 INFO     [torch_client.py:84] Training of (CLIENT: 1304) completes, {'client_id': 1304, 'moving_loss': 4.7846508622169495, 'trained_size': 4, 'success': True}
+(07-13) 14:36:03 INFO     [torch_client.py:49] Start to train (CLIENT: 220) ...
+(07-13) 14:36:03 INFO     [torch_client.py:84] Training of (CLIENT: 220) completes, {'client_id': 220, 'moving_loss': 4.291225492954254, 'trained_size': 4, 'success': True}
+(07-13) 14:36:05 INFO     [executor.py:458] Caught exception <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Stream removed (recvmsg:Connection reset by peer (104))"
+	debug_error_string = "UNAVAILABLE:Stream removed (recvmsg:Connection reset by peer (104))"
+> from aggregator, terminating executor 3 ...
+(07-13) 14:36:05 INFO     [executor.py:458] Caught exception <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Stream removed (Socket closed)"
+	debug_error_string = "UNAVAILABLE:Stream removed (Socket closed)"
+> from aggregator, terminating executor 1 ...
+(07-13) 14:36:05 INFO     [executor.py:458] Caught exception <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Stream removed (Socket closed)"
+	debug_error_string = "UNAVAILABLE:Stream removed (Socket closed)"
+> from aggregator, terminating executor 2 ...
+(07-13) 14:36:05 INFO     [executor.py:256] Terminating the executor ...
+(07-13) 14:36:05 INFO     [executor.py:256] Terminating the executor ...
+(07-13) 14:36:05 INFO     [executor.py:256] Terminating the executor ...
+(07-13) 14:36:05 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 14:36:05 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 14:36:05 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 14:36:05 INFO     [executor.py:458] Caught exception <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Stream removed (Socket closed)"
+	debug_error_string = "UNAVAILABLE:Stream removed (Socket closed)"
+> from aggregator, terminating executor 4 ...
+(07-13) 14:36:05 INFO     [executor.py:256] Terminating the executor ...
+(07-13) 14:36:05 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 15:00:51 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 15:00:51 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 15:00:51 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 15:00:51 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 15:00:51 INFO     [executor.py:77] (EXECUTOR:3) is setting up environ ...
+(07-13) 15:00:51 INFO     [executor.py:77] (EXECUTOR:4) is setting up environ ...
+(07-13) 15:00:51 INFO     [executor.py:77] (EXECUTOR:2) is setting up environ ...
+(07-13) 15:00:51 INFO     [executor.py:77] (EXECUTOR:1) is setting up environ ...
+(07-13) 15:00:51 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 15:00:51 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 15:00:51 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 15:00:51 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 15:00:51 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 15:00:51 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 15:00:51 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 15:00:51 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 15:00:51 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 15:00:51 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 15:00:51 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 15:00:51 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 15:00:52 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 15:00:52 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 15:00:52 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 15:00:52 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 15:00:52 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 15:00:52 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 15:00:52 INFO     [executor.py:405] Start monitoring events ...
+(07-13) 15:00:52 INFO     [executor.py:405] Start monitoring events ...
+(07-13) 15:00:52 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 15:00:52 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 15:00:52 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 15:00:52 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 15:00:52 INFO     [executor.py:405] Start monitoring events ...
+(07-13) 15:00:52 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 15:00:52 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 15:00:52 INFO     [executor.py:405] Start monitoring events ...
+(07-13) 15:01:40 INFO     [model_test_module.py:307] Rank 3: Test set: Average loss: 4.1764, Top-1 Accuracy: 634.0/20418 (0.0311), Top-5 Accuracy: 0.097
+(07-13) 15:01:40 INFO     [torch_client.py:264] Test results: Eval_time 45.0222, test_loss 4.1764, test_accuracy 3.11%, test_5_accuracy 9.70% 
+
+(07-13) 15:01:40 INFO     [model_test_module.py:307] Rank 4: Test set: Average loss: 4.1713, Top-1 Accuracy: 628.0/20418 (0.0308), Top-5 Accuracy: 0.0931
+(07-13) 15:01:40 INFO     [torch_client.py:264] Test results: Eval_time 44.8288, test_loss 4.1713, test_accuracy 3.08%, test_5_accuracy 9.31% 
+
+(07-13) 15:01:42 INFO     [torch_client.py:49] Start to train (CLIENT: 1175) ...
+(07-13) 15:01:42 INFO     [torch_client.py:84] Training of (CLIENT: 1175) completes, {'client_id': 1175, 'moving_loss': 5.020142674446106, 'trained_size': 4, 'success': True}
+(07-13) 15:01:42 INFO     [torch_client.py:49] Start to train (CLIENT: 98) ...
+(07-13) 15:01:42 INFO     [torch_client.py:84] Training of (CLIENT: 98) completes, {'client_id': 98, 'moving_loss': 4.534597277641296, 'trained_size': 4, 'success': True}
+(07-13) 15:01:42 INFO     [torch_client.py:49] Start to train (CLIENT: 1304) ...
+(07-13) 15:01:42 INFO     [torch_client.py:84] Training of (CLIENT: 1304) completes, {'client_id': 1304, 'moving_loss': 4.855044007301331, 'trained_size': 4, 'success': True}
+(07-13) 15:01:43 INFO     [torch_client.py:49] Start to train (CLIENT: 220) ...
+(07-13) 15:01:43 INFO     [torch_client.py:84] Training of (CLIENT: 220) completes, {'client_id': 220, 'moving_loss': 4.75023740530014, 'trained_size': 4, 'success': True}
+(07-13) 15:01:44 INFO     [executor.py:459] Caught exception <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Stream removed (Socket closed)"
+	debug_error_string = "UNAVAILABLE:Stream removed (Socket closed)"
+> from aggregator, terminating executor 2 ...
+(07-13) 15:01:44 INFO     [executor.py:459] Caught exception <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Stream removed (Socket closed)"
+	debug_error_string = "UNAVAILABLE:Stream removed (Socket closed)"
+> from aggregator, terminating executor 1 ...
+(07-13) 15:01:44 INFO     [executor.py:256] Terminating the executor ...
+(07-13) 15:01:44 INFO     [executor.py:256] Terminating the executor ...
+(07-13) 15:01:44 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 15:01:44 INFO     [executor.py:459] Caught exception <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Stream removed (Socket closed)"
+	debug_error_string = "UNAVAILABLE:Stream removed (Socket closed)"
+> from aggregator, terminating executor 3 ...
+(07-13) 15:01:44 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 15:01:44 INFO     [executor.py:256] Terminating the executor ...
+(07-13) 15:01:44 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 15:01:44 INFO     [executor.py:459] Caught exception <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Stream removed (Socket closed)"
+	debug_error_string = "UNAVAILABLE:Stream removed (Socket closed)"
+> from aggregator, terminating executor 4 ...
+(07-13) 15:01:44 INFO     [executor.py:256] Terminating the executor ...
+(07-13) 15:01:44 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 15:04:56 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 15:04:56 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 15:04:56 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 15:04:56 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 15:04:56 INFO     [executor.py:77] (EXECUTOR:1) is setting up environ ...
+(07-13) 15:04:56 INFO     [executor.py:77] (EXECUTOR:2) is setting up environ ...
+(07-13) 15:04:56 INFO     [executor.py:77] (EXECUTOR:4) is setting up environ ...
+(07-13) 15:04:56 INFO     [executor.py:77] (EXECUTOR:3) is setting up environ ...
+(07-13) 15:04:56 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 15:04:56 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 15:04:56 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 15:04:56 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 15:04:56 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 15:04:56 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 15:04:56 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 15:04:56 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 15:04:56 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 15:04:57 INFO     [executor.py:123] Data partitioner starts ...
+(07-13) 15:04:57 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 15:04:57 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 15:04:57 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 15:04:57 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 15:04:57 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 15:04:57 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 15:04:57 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 15:04:57 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 15:04:57 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 15:04:57 INFO     [executor.py:405] Start monitoring events ...
+(07-13) 15:04:57 INFO     [executor.py:405] Start monitoring events ...
+(07-13) 15:04:57 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 15:04:57 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 15:04:57 INFO     [executor.py:405] Start monitoring events ...
+(07-13) 15:04:57 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 15:04:57 INFO     [executor.py:141] Data partitioner completes ...
+(07-13) 15:04:57 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 15:04:57 INFO     [executor.py:405] Start monitoring events ...
+(07-13) 15:05:44 INFO     [model_test_module.py:307] Rank 2: Test set: Average loss: 4.1701, Top-1 Accuracy: 641.0/20418 (0.0314), Top-5 Accuracy: 0.0986
+(07-13) 15:05:44 INFO     [torch_client.py:264] Test results: Eval_time 43.2839, test_loss 4.1701, test_accuracy 3.14%, test_5_accuracy 9.86% 
+
+(07-13) 15:05:45 INFO     [model_test_module.py:307] Rank 1: Test set: Average loss: 4.1711, Top-1 Accuracy: 622.0/20418 (0.0305), Top-5 Accuracy: 0.0958
+(07-13) 15:05:45 INFO     [torch_client.py:264] Test results: Eval_time 44.3752, test_loss 4.1711, test_accuracy 3.05%, test_5_accuracy 9.58% 
+
+(07-13) 15:05:45 INFO     [torch_client.py:49] Start to train (CLIENT: 1175) ...
+(07-13) 15:05:45 INFO     [torch_client.py:84] Training of (CLIENT: 1175) completes, {'client_id': 1175, 'moving_loss': 5.020142674446106, 'trained_size': 4, 'success': True}
+(07-13) 15:05:45 INFO     [torch_client.py:49] Start to train (CLIENT: 98) ...
+(07-13) 15:05:45 INFO     [torch_client.py:84] Training of (CLIENT: 98) completes, {'client_id': 98, 'moving_loss': 4.534597277641296, 'trained_size': 4, 'success': True}
+(07-13) 15:05:46 INFO     [torch_client.py:49] Start to train (CLIENT: 1304) ...
+(07-13) 15:05:46 INFO     [torch_client.py:84] Training of (CLIENT: 1304) completes, {'client_id': 1304, 'moving_loss': 4.855044007301331, 'trained_size': 4, 'success': True}
+(07-13) 15:05:46 INFO     [torch_client.py:49] Start to train (CLIENT: 220) ...
+(07-13) 15:05:46 INFO     [torch_client.py:84] Training of (CLIENT: 220) completes, {'client_id': 220, 'moving_loss': 4.75023740530014, 'trained_size': 4, 'success': True}
+(07-13) 15:05:47 INFO     [executor.py:256] Terminating the executor ...
+(07-13) 15:05:47 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 15:05:47 INFO     [executor.py:256] Terminating the executor ...
+(07-13) 15:05:47 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 15:05:47 INFO     [executor.py:256] Terminating the executor ...
+(07-13) 15:05:47 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 15:05:47 INFO     [executor.py:256] Terminating the executor ...
+(07-13) 15:05:47 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 19:30:09 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 19:30:09 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 19:30:09 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 19:30:09 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 19:30:09 INFO     [executor.py:84] (EXECUTOR:4) is setting up environ ...
+(07-13) 19:30:09 INFO     [executor.py:84] (EXECUTOR:1) is setting up environ ...
+(07-13) 19:30:09 INFO     [executor.py:84] (EXECUTOR:2) is setting up environ ...
+(07-13) 19:30:09 INFO     [executor.py:84] (EXECUTOR:3) is setting up environ ...
+(07-13) 19:30:09 INFO     [executor.py:130] Data partitioner starts ...
+(07-13) 19:30:09 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 19:30:09 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 19:30:09 INFO     [executor.py:130] Data partitioner starts ...
+(07-13) 19:30:09 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 19:30:09 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 19:30:09 INFO     [executor.py:130] Data partitioner starts ...
+(07-13) 19:30:09 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 19:30:09 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 19:30:09 INFO     [executor.py:130] Data partitioner starts ...
+(07-13) 19:30:09 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 19:30:09 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 19:30:10 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 19:30:10 INFO     [executor.py:148] Data partitioner completes ...
+(07-13) 19:30:10 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 19:30:10 INFO     [executor.py:412] Start monitoring events ...
+(07-13) 19:30:10 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 19:30:10 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 19:30:10 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 19:30:10 INFO     [executor.py:148] Data partitioner completes ...
+(07-13) 19:30:10 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 19:30:10 INFO     [executor.py:148] Data partitioner completes ...
+(07-13) 19:30:10 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 19:30:10 INFO     [executor.py:412] Start monitoring events ...
+(07-13) 19:30:10 INFO     [executor.py:412] Start monitoring events ...
+(07-13) 19:30:10 INFO     [executor.py:148] Data partitioner completes ...
+(07-13) 19:30:10 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 19:30:10 INFO     [executor.py:412] Start monitoring events ...
+(07-13) 19:30:53 INFO     [model_test_module.py:307] Rank 4: Test set: Average loss: 4.1713, Top-1 Accuracy: 628.0/20418 (0.0308), Top-5 Accuracy: 0.0931
+(07-13) 19:30:53 INFO     [torch_client.py:264] Test results: Eval_time 39.889, test_loss 4.1713, test_accuracy 3.08%, test_5_accuracy 9.31% 
+
+(07-13) 19:30:54 INFO     [torch_client.py:49] Start to train (CLIENT: 1175) ...
+(07-13) 19:30:54 INFO     [torch_client.py:84] Training of (CLIENT: 1175) completes, {'client_id': 1175, 'moving_loss': 5.020142674446106, 'trained_size': 4, 'success': True}
+(07-13) 19:30:55 INFO     [torch_client.py:49] Start to train (CLIENT: 98) ...
+(07-13) 19:30:55 INFO     [torch_client.py:84] Training of (CLIENT: 98) completes, {'client_id': 98, 'moving_loss': 4.595829546451569, 'trained_size': 4, 'success': True}
+(07-13) 19:30:56 INFO     [torch_client.py:49] Start to train (CLIENT: 1304) ...
+(07-13) 19:30:56 INFO     [torch_client.py:84] Training of (CLIENT: 1304) completes, {'client_id': 1304, 'moving_loss': 4.300246179103851, 'trained_size': 4, 'success': True}
+(07-13) 19:30:56 INFO     [torch_client.py:49] Start to train (CLIENT: 220) ...
+(07-13) 19:30:56 INFO     [torch_client.py:84] Training of (CLIENT: 220) completes, {'client_id': 220, 'moving_loss': 5.11157751083374, 'trained_size': 4, 'success': True}
+(07-13) 19:30:57 INFO     [executor.py:263] Terminating the executor ...
+(07-13) 19:30:57 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 19:30:57 INFO     [executor.py:263] Terminating the executor ...
+(07-13) 19:30:57 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 19:30:57 INFO     [executor.py:263] Terminating the executor ...
+(07-13) 19:30:57 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 19:30:58 INFO     [executor.py:263] Terminating the executor ...
+(07-13) 19:30:58 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 19:46:23 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 19:46:23 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 19:46:23 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 19:46:23 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 19:46:23 INFO     [executor.py:84] (EXECUTOR:4) is setting up environ ...
+(07-13) 19:46:23 INFO     [executor.py:84] (EXECUTOR:2) is setting up environ ...
+(07-13) 19:46:23 INFO     [executor.py:84] (EXECUTOR:1) is setting up environ ...
+(07-13) 19:46:23 INFO     [executor.py:84] (EXECUTOR:3) is setting up environ ...
+(07-13) 19:46:23 INFO     [executor.py:130] Data partitioner starts ...
+(07-13) 19:46:23 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 19:46:23 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 19:46:23 INFO     [executor.py:130] Data partitioner starts ...
+(07-13) 19:46:23 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 19:46:23 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 19:46:23 INFO     [executor.py:130] Data partitioner starts ...
+(07-13) 19:46:23 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 19:46:23 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 19:46:23 INFO     [executor.py:130] Data partitioner starts ...
+(07-13) 19:46:23 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 19:46:23 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 19:46:24 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 19:46:24 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 19:46:24 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 19:46:24 INFO     [executor.py:148] Data partitioner completes ...
+(07-13) 19:46:24 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 19:46:24 INFO     [executor.py:148] Data partitioner completes ...
+(07-13) 19:46:24 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 19:46:24 INFO     [executor.py:412] Start monitoring events ...
+(07-13) 19:46:24 INFO     [executor.py:412] Start monitoring events ...
+(07-13) 19:46:24 INFO     [executor.py:148] Data partitioner completes ...
+(07-13) 19:46:24 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 19:46:24 INFO     [executor.py:412] Start monitoring events ...
+(07-13) 19:46:24 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 19:46:24 INFO     [executor.py:148] Data partitioner completes ...
+(07-13) 19:46:24 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 19:46:24 INFO     [executor.py:412] Start monitoring events ...
+(07-13) 19:47:13 INFO     [model_test_module.py:307] Rank 2: Test set: Average loss: 4.1701, Top-1 Accuracy: 641.0/20418 (0.0314), Top-5 Accuracy: 0.0986
+(07-13) 19:47:13 INFO     [torch_client.py:264] Test results: Eval_time 45.6695, test_loss 4.1701, test_accuracy 3.14%, test_5_accuracy 9.86% 
+
+(07-13) 19:47:14 INFO     [model_test_module.py:307] Rank 4: Test set: Average loss: 4.1713, Top-1 Accuracy: 628.0/20418 (0.0308), Top-5 Accuracy: 0.0931
+(07-13) 19:47:14 INFO     [torch_client.py:264] Test results: Eval_time 46.4577, test_loss 4.1713, test_accuracy 3.08%, test_5_accuracy 9.31% 
+
+(07-13) 19:47:15 INFO     [model_test_module.py:307] Rank 1: Test set: Average loss: 4.1711, Top-1 Accuracy: 622.0/20418 (0.0305), Top-5 Accuracy: 0.0958
+(07-13) 19:47:15 INFO     [torch_client.py:264] Test results: Eval_time 47.2033, test_loss 4.1711, test_accuracy 3.05%, test_5_accuracy 9.58% 
+
+(07-13) 19:50:53 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 19:50:53 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 19:50:53 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 19:50:53 INFO     [fllibs.py:97] Initializing the model ...
+(07-13) 19:50:53 INFO     [executor.py:84] (EXECUTOR:1) is setting up environ ...
+(07-13) 19:50:53 INFO     [executor.py:84] (EXECUTOR:3) is setting up environ ...
+(07-13) 19:50:53 INFO     [executor.py:84] (EXECUTOR:4) is setting up environ ...
+(07-13) 19:50:53 INFO     [executor.py:84] (EXECUTOR:2) is setting up environ ...
+(07-13) 19:50:53 INFO     [executor.py:130] Data partitioner starts ...
+(07-13) 19:50:53 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 19:50:53 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 19:50:53 INFO     [executor.py:130] Data partitioner starts ...
+(07-13) 19:50:53 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 19:50:53 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 19:50:53 INFO     [executor.py:130] Data partitioner starts ...
+(07-13) 19:50:53 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 19:50:54 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 19:50:54 INFO     [executor.py:130] Data partitioner starts ...
+(07-13) 19:50:54 INFO     [divide_data.py:62] Partitioning data by profile /opt/FedScale/benchmark/dataset/data/femnist/client_data_mapping/train.csv...
+(07-13) 19:50:54 INFO     [divide_data.py:74] Trace names are client_id, sample_path, label_name, label_id
+(07-13) 19:50:54 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 19:50:54 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 19:50:54 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 19:50:54 INFO     [executor.py:148] Data partitioner completes ...
+(07-13) 19:50:54 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 19:50:54 INFO     [executor.py:148] Data partitioner completes ...
+(07-13) 19:50:54 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 19:50:54 INFO     [executor.py:148] Data partitioner completes ...
+(07-13) 19:50:54 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 19:50:54 INFO     [executor.py:412] Start monitoring events ...
+(07-13) 19:50:54 INFO     [executor.py:412] Start monitoring events ...
+(07-13) 19:50:54 INFO     [executor.py:412] Start monitoring events ...
+(07-13) 19:50:54 INFO     [divide_data.py:105] Randomly partitioning data, 81674 samples...
+(07-13) 19:50:54 INFO     [executor.py:148] Data partitioner completes ...
+(07-13) 19:50:54 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 127.0.0.1 %%%%%%%%%%
+(07-13) 19:50:54 INFO     [executor.py:412] Start monitoring events ...
+(07-13) 19:51:41 INFO     [model_test_module.py:307] Rank 1: Test set: Average loss: 4.1711, Top-1 Accuracy: 622.0/20418 (0.0305), Top-5 Accuracy: 0.0958
+(07-13) 19:51:41 INFO     [torch_client.py:264] Test results: Eval_time 43.3663, test_loss 4.1711, test_accuracy 3.05%, test_5_accuracy 9.58% 
+
+(07-13) 19:51:42 INFO     [model_test_module.py:307] Rank 3: Test set: Average loss: 4.1764, Top-1 Accuracy: 634.0/20418 (0.0311), Top-5 Accuracy: 0.097
+(07-13) 19:51:42 INFO     [torch_client.py:264] Test results: Eval_time 44.9077, test_loss 4.1764, test_accuracy 3.11%, test_5_accuracy 9.70% 
+
+(07-13) 19:51:42 INFO     [torch_client.py:49] Start to train (CLIENT: 1175) ...
+(07-13) 19:51:43 INFO     [torch_client.py:84] Training of (CLIENT: 1175) completes, {'client_id': 1175, 'moving_loss': 5.020142674446106, 'trained_size': 4, 'success': True}
+(07-13) 19:51:43 INFO     [torch_client.py:49] Start to train (CLIENT: 98) ...
+(07-13) 19:51:43 INFO     [torch_client.py:84] Training of (CLIENT: 98) completes, {'client_id': 98, 'moving_loss': 4.534597277641296, 'trained_size': 4, 'success': True}
+(07-13) 19:51:43 INFO     [torch_client.py:49] Start to train (CLIENT: 1304) ...
+(07-13) 19:51:43 INFO     [torch_client.py:84] Training of (CLIENT: 1304) completes, {'client_id': 1304, 'moving_loss': 4.855044007301331, 'trained_size': 4, 'success': True}
+(07-13) 19:51:43 INFO     [torch_client.py:49] Start to train (CLIENT: 220) ...
+(07-13) 19:51:44 INFO     [torch_client.py:84] Training of (CLIENT: 220) completes, {'client_id': 220, 'moving_loss': 4.75023740530014, 'trained_size': 4, 'success': True}
+(07-13) 19:51:44 INFO     [executor.py:263] Terminating the executor ...
+(07-13) 19:51:44 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 19:51:45 INFO     [executor.py:263] Terminating the executor ...
+(07-13) 19:51:45 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 19:51:45 INFO     [executor.py:263] Terminating the executor ...
+(07-13) 19:51:45 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
+(07-13) 19:51:45 INFO     [executor.py:263] Terminating the executor ...
+(07-13) 19:51:45 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
