@@ -55,13 +55,17 @@ RUN python -m pip install \
 
 # Install these later when we move to transformer/LoRA experiments.
 # Keeping them out initially makes the FedScale baseline easier to debug.
+# The version are pinned to work with PyTorch 1.13.1
 #
-# RUN python -m pip install \
-#     transformers \
-#     datasets \
-#     peft \
-#     accelerate \
-#     safetensors
+
+RUN python -m pip install \
+    transformers==4.33.3 \
+    peft==0.5.0 \
+    accelerate==0.23.0 \
+    safetensors==0.3.3 \
+    huggingface-hub==0.17.3 \
+    tokenizers==0.13.3 \
+    sentencepiece
 
 WORKDIR /opt/FedScale
 
