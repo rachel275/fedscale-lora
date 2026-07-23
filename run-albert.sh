@@ -5,6 +5,29 @@ export FEDSCALE_HOME=/opt/FedScale
 export PYTHONPATH=/opt/FedScale
 
 # ------------------------------------------------------------
+# Role
+#
+# Usage:
+#   ./run-albert.sh all
+#   ./run-albert.sh aggregator
+#   ./run-albert.sh executor
+#
+# Default: all
+# ------------------------------------------------------------
+
+ROLE="${1:-all}"
+
+case "${ROLE}" in
+    all|aggregator|executor)
+        ;;
+    *)
+        echo "Usage: $0 [all|aggregator|executor]"
+        exit 1
+        ;;
+esac
+
+
+# ------------------------------------------------------------
 # Experiment parameters
 # ------------------------------------------------------------
 
@@ -27,8 +50,17 @@ SAVE_CHECKPOINT="${SAVE_CHECKPOINT:-0}"
 TEST_RATIO="${TEST_RATIO:-0.01}"
 TEST_BSZ="${TEST_BSZ:-32}"
 
-# Use a configurable port so separate/stale runs do not collide.
+# Address executors use to reach the aggregator.
+#
+# Same-node:
+#   PS_IP=127.0.0.1
+#
+# Two-node:
+#   PS_IP=<aggregator node IP>
+#
+PS_IP="${PS_IP:-127.0.0.1}"
 PS_PORT="${PS_PORT:-20010}"
+
 
 # ------------------------------------------------------------
 # CPU settings
@@ -41,6 +73,7 @@ export NUMEXPR_NUM_THREADS="${NUMEXPR_NUM_THREADS:-1}"
 
 mkdir -p "${RESULTS}"
 
+
 # ------------------------------------------------------------
 # Common FedScale arguments
 # ------------------------------------------------------------
@@ -49,10 +82,13 @@ COMMON_ARGS=(
     --job_name "${RUN_NAME}"
     --log_path "${RESULTS}"
 
-    --ps_ip 127.0.0.1
+    --ps_ip "${PS_IP}"
     --ps_port "${PS_PORT}"
 
     --experiment_mode simulation
+
+    --device_conf_file /opt/FedScale/benchmark/dataset/data/device_info/client_device_capacity
+    --device_avail_file /opt/FedScale/benchmark/dataset/data/device_info/client_behave_trace
 
     --num_executors "${NUM_EXECUTORS}"
     --num_participants "${NUM_PARTICIPANTS}"
@@ -62,7 +98,7 @@ COMMON_ARGS=(
 
     --test_ratio "${TEST_RATIO}"
     --test_bsz "${TEST_BSZ}"
-    
+
     --task nlp
 
     --data_set blog
@@ -86,12 +122,9 @@ COMMON_ARGS=(
     --use_cuda False
 )
 
+
 # ------------------------------------------------------------
 # Optional checkpoint flag
-#
-# This assumes config_parser.py uses:
-#
-# parser.add_argument("--save_checkpoint", action="store_true")
 # ------------------------------------------------------------
 
 if [ "${SAVE_CHECKPOINT}" = "1" ]; then
@@ -112,14 +145,12 @@ cleanup() {
     echo
     echo "Stopping FedScale..."
 
-    # Stop executors first.
     for pid in "${EXECUTOR_PIDS[@]:-}"; do
         if kill -0 "${pid}" 2>/dev/null; then
             kill "${pid}" 2>/dev/null || true
         fi
     done
 
-    # Then stop aggregator if still alive.
     if [ -n "${AGG_PID}" ] && kill -0 "${AGG_PID}" 2>/dev/null; then
         kill "${AGG_PID}" 2>/dev/null || true
     fi
@@ -136,80 +167,117 @@ trap cleanup EXIT INT TERM
 # Start aggregator
 # ------------------------------------------------------------
 
-echo "========================================"
-echo "Starting Aggregator"
-echo "========================================"
+if [[ "${ROLE}" == "aggregator" || "${ROLE}" == "all" ]]; then
 
-python -u \
-    fedscale/cloud/aggregation/aggregator.py \
-    "${COMMON_ARGS[@]}" \
-    --this_rank 0 \
-    > "${RESULTS}/aggregator.log" 2>&1 &
+    echo "========================================"
+    echo "Starting Aggregator"
+    echo "========================================"
 
-AGG_PID=$!
+    python -u \
+        fedscale/cloud/aggregation/aggregator.py \
+        "${COMMON_ARGS[@]}" \
+        --this_rank 0 \
+        > "${RESULTS}/aggregator.log" 2>&1 &
 
-echo "Aggregator PID: ${AGG_PID}"
+    AGG_PID=$!
+
+    echo "Aggregator PID: ${AGG_PID}"
 
 
-# ------------------------------------------------------------
-# Wait for aggregator port
-# ------------------------------------------------------------
+    # --------------------------------------------------------
+    # Wait for locally started aggregator
+    # --------------------------------------------------------
 
-echo "Waiting for aggregator on port ${PS_PORT}..."
+    echo "Waiting for aggregator on port ${PS_PORT}..."
 
-aggregator_ready=0
+    aggregator_ready=0
 
-for _ in $(seq 1 60); do
+    for _ in $(seq 1 60); do
 
-    # Aggregator died before becoming ready.
-    if ! kill -0 "${AGG_PID}" 2>/dev/null; then
-        echo "ERROR: Aggregator exited before becoming ready."
+        if ! kill -0 "${AGG_PID}" 2>/dev/null; then
+            echo "ERROR: Aggregator exited before becoming ready."
+            tail -50 "${RESULTS}/aggregator.log" || true
+            exit 1
+        fi
+
+        # The aggregator listens locally, regardless of which IP
+        # remote executors use to reach this node.
+        if (
+            echo > "/dev/tcp/127.0.0.1/${PS_PORT}"
+        ) >/dev/null 2>&1; then
+
+            aggregator_ready=1
+            break
+        fi
+
+        sleep 1
+    done
+
+    if [ "${aggregator_ready}" -ne 1 ]; then
+        echo "ERROR: Aggregator did not open port ${PS_PORT}."
         tail -50 "${RESULTS}/aggregator.log" || true
         exit 1
     fi
 
-    # Bash TCP connectivity check.
-    if (
-        echo > "/dev/tcp/127.0.0.1/${PS_PORT}"
-    ) >/dev/null 2>&1; then
-
-        aggregator_ready=1
-        break
-
-    fi
-
-    sleep 1
-done
-
-if [ "${aggregator_ready}" -ne 1 ]; then
-    echo "ERROR: Aggregator did not open port ${PS_PORT}."
-    tail -50 "${RESULTS}/aggregator.log" || true
-    exit 1
+    echo "Aggregator is listening."
 fi
 
-echo "Aggregator is listening."
+
+# ------------------------------------------------------------
+# Executor-only mode: verify remote aggregator is reachable
+# ------------------------------------------------------------
+
+if [[ "${ROLE}" == "executor" ]]; then
+
+    echo "Checking aggregator at ${PS_IP}:${PS_PORT}..."
+
+    aggregator_ready=0
+
+    for _ in $(seq 1 60); do
+
+        if (
+            echo > "/dev/tcp/${PS_IP}/${PS_PORT}"
+        ) >/dev/null 2>&1; then
+
+            aggregator_ready=1
+            break
+        fi
+
+        sleep 1
+    done
+
+    if [ "${aggregator_ready}" -ne 1 ]; then
+        echo "ERROR: Cannot reach aggregator at ${PS_IP}:${PS_PORT}."
+        exit 1
+    fi
+
+    echo "Aggregator is reachable."
+fi
 
 
 # ------------------------------------------------------------
 # Start executors
 # ------------------------------------------------------------
 
-echo "========================================"
-echo "Starting ${NUM_EXECUTORS} Executors"
-echo "========================================"
+if [[ "${ROLE}" == "executor" || "${ROLE}" == "all" ]]; then
 
-for RANK in $(seq 1 "${NUM_EXECUTORS}"); do
+    echo "========================================"
+    echo "Starting ${NUM_EXECUTORS} Executors"
+    echo "========================================"
 
-    python -u \
-        fedscale/cloud/execution/executor.py \
-        "${COMMON_ARGS[@]}" \
-        --this_rank "${RANK}" \
-        > "${RESULTS}/executor-${RANK}.log" 2>&1 &
+    for RANK in $(seq 1 "${NUM_EXECUTORS}"); do
 
-    EXECUTOR_PIDS+=("$!")
+        python -u \
+            fedscale/cloud/execution/executor.py \
+            "${COMMON_ARGS[@]}" \
+            --this_rank "${RANK}" \
+            > "${RESULTS}/executor-${RANK}.log" 2>&1 &
 
-    echo "Executor ${RANK} PID: ${EXECUTOR_PIDS[-1]}"
-done
+        EXECUTOR_PIDS+=("$!")
+
+        echo "Executor ${RANK} PID: ${EXECUTOR_PIDS[-1]}"
+    done
+fi
 
 
 # ------------------------------------------------------------
@@ -220,6 +288,7 @@ echo
 echo "========================================"
 echo "FedScale experiment running"
 echo "========================================"
+echo "Role          : ${ROLE}"
 echo "Run name      : ${RUN_NAME}"
 echo "Model         : ${MODEL}"
 echo "Dataset       : blog"
@@ -231,109 +300,142 @@ echo "Rounds        : ${ROUNDS}"
 echo "Local steps   : ${LOCAL_STEPS}"
 echo "Eval interval : ${EVAL_INTERVAL}"
 echo "Checkpointing : ${SAVE_CHECKPOINT}"
+echo "Aggregator IP : ${PS_IP}"
 echo "Port          : ${PS_PORT}"
 echo
-echo "Aggregator log:"
-echo "  tail -f ${RESULTS}/aggregator.log"
-echo
-echo "Executor log:"
-echo "  tail -f ${RESULTS}/executor-1.log"
-echo
 
-
-# ------------------------------------------------------------
-# Wait specifically for aggregator completion
-# ------------------------------------------------------------
-
-set +e
-wait "${AGG_PID}"
-AGG_STATUS=$?
-set -e
-
-if [ "${AGG_STATUS}" -ne 0 ]; then
+if [[ "${ROLE}" == "aggregator" || "${ROLE}" == "all" ]]; then
+    echo "Aggregator log:"
+    echo "  tail -f ${RESULTS}/aggregator.log"
     echo
-    echo "ERROR: Aggregator exited with status ${AGG_STATUS}."
-    tail -100 "${RESULTS}/aggregator.log" || true
-    exit "${AGG_STATUS}"
+fi
+
+if [[ "${ROLE}" == "executor" || "${ROLE}" == "all" ]]; then
+    echo "Executor log:"
+    echo "  tail -f ${RESULTS}/executor-1.log"
+    echo
 fi
 
 
 # ------------------------------------------------------------
-# Give executors a chance to process terminate event
+# Aggregator/all mode: wait for aggregator completion
 # ------------------------------------------------------------
 
-for pid in "${EXECUTOR_PIDS[@]}"; do
+if [[ "${ROLE}" == "aggregator" || "${ROLE}" == "all" ]]; then
 
-    for _ in $(seq 1 10); do
+    set +e
+    wait "${AGG_PID}"
+    AGG_STATUS=$?
+    set -e
 
-        if ! kill -0 "${pid}" 2>/dev/null; then
-            break
+    if [ "${AGG_STATUS}" -ne 0 ]; then
+        echo
+        echo "ERROR: Aggregator exited with status ${AGG_STATUS}."
+        tail -100 "${RESULTS}/aggregator.log" || true
+        exit "${AGG_STATUS}"
+    fi
+fi
+
+
+# ------------------------------------------------------------
+# Executor mode: wait for executors
+#
+# In executor-only mode, they should terminate after receiving
+# the aggregator's terminate event.
+# ------------------------------------------------------------
+
+if [[ "${ROLE}" == "executor" ]]; then
+
+    for pid in "${EXECUTOR_PIDS[@]}"; do
+        wait "${pid}" || true
+    done
+fi
+
+
+# ------------------------------------------------------------
+# All mode: give local executors time to terminate
+# ------------------------------------------------------------
+
+if [[ "${ROLE}" == "all" ]]; then
+
+    for pid in "${EXECUTOR_PIDS[@]}"; do
+
+        for _ in $(seq 1 10); do
+
+            if ! kill -0 "${pid}" 2>/dev/null; then
+                break
+            fi
+
+            sleep 1
+        done
+
+        if kill -0 "${pid}" 2>/dev/null; then
+            echo "WARNING: Executor PID ${pid} did not terminate; stopping it."
+            kill "${pid}" 2>/dev/null || true
         fi
 
-        sleep 1
-
+        wait "${pid}" 2>/dev/null || true
     done
+fi
 
-    # Kill executor if it failed to terminate cleanly.
-    if kill -0 "${pid}" 2>/dev/null; then
-        echo "WARNING: Executor PID ${pid} did not terminate; stopping it."
-        kill "${pid}" 2>/dev/null || true
+
+# ------------------------------------------------------------
+# Validation
+#
+# Aggregator-only mode cannot validate local executor files,
+# because those are produced on another physical node.
+# ------------------------------------------------------------
+
+if [[ "${ROLE}" == "executor" || "${ROLE}" == "all" ]]; then
+
+    if ! grep -q "Training of (CLIENT: .* completes" \
+        "${RESULTS}"/executor-*.log; then
+
+        echo
+        echo "ERROR: No successful client training was recorded."
+        exit 1
     fi
 
-    wait "${pid}" 2>/dev/null || true
-done
+    if ! find "${RESULTS}" \
+        -maxdepth 1 \
+        -name 'communication-executor-*.jsonl' \
+        -size +0c \
+        -print -quit \
+        | grep -q .; then
 
+        echo
+        echo "ERROR: No communication records were generated."
+        exit 1
+    fi
 
-# ------------------------------------------------------------
-# Basic run validation
-# ------------------------------------------------------------
+    if ! find "${RESULTS}" \
+        -maxdepth 1 \
+        -name 'gemm-executor-*.jsonl' \
+        -size +0c \
+        -print -quit \
+        | grep -q .; then
 
-if ! grep -q "Training of (CLIENT: .* completes" \
-    "${RESULTS}"/executor-*.log; then
+        echo
+        echo "ERROR: No GEMM records were generated."
+        exit 1
+    fi
 
-    echo
-    echo "ERROR: No successful client training was recorded."
-    exit 1
+    if ! find "${RESULTS}" \
+        -maxdepth 1 \
+        -name 'client-metrics-executor-*.jsonl' \
+        -size +0c \
+        -print -quit \
+        | grep -q .; then
+
+        echo
+        echo "ERROR: No client metrics records were generated."
+        exit 1
+    fi
 fi
 
-if ! find "${RESULTS}" \
-    -maxdepth 1 \
-    -name 'communication-executor-*.jsonl' \
-    -size +0c \
-    -print -quit \
-    | grep -q .; then
-
-    echo
-    echo "ERROR: No communication records were generated."
-    exit 1
-fi
-
-if ! find "${RESULTS}" \
-    -maxdepth 1 \
-    -name 'gemm-executor-*.jsonl' \
-    -size +0c \
-    -print -quit \
-    | grep -q .; then
-
-    echo
-    echo "ERROR: No GEMM records were generated."
-    exit 1
-fi
-
-if ! find "${RESULTS}" \
-    -maxdepth 1 \
-    -name 'client-metrics-executor-*.jsonl' \
-    -size +0c \
-    -print -quit \
-    | grep -q .; then
-
-    echo
-    echo "ERROR: No client metrics records were generated."
-    exit 1
-fi
 
 echo
 echo "========================================"
-echo "FedScale experiment completed successfully"
+echo "FedScale ${ROLE} run completed"
 echo "========================================"
 

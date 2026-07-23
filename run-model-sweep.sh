@@ -1,6 +1,25 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+
+# ------------------------------------------------------------
+# Distributed role
+# ------------------------------------------------------------
+
+ROLE="${1:-all}"
+
+case "${ROLE}" in
+    all|aggregator|executor)
+        ;;
+    *)
+        echo "Usage: $0 [all|aggregator|executor]"
+        exit 1
+        ;;
+esac
+
+AGGREGATOR_IP="${AGGREGATOR_IP:-127.0.0.1}"
+
+
 # ============================================================
 # Multi-model federated training sweep
 #
@@ -36,13 +55,13 @@ IMAGE="${IMAGE:-fedscale-lora:torch113}"
 # Experiment configuration
 # ------------------------------------------------------------
 
-NUM_PARTICIPANTS="${NUM_PARTICIPANTS:-2}"
-NUM_EXECUTORS="${NUM_EXECUTORS:-4}"
+NUM_PARTICIPANTS="${NUM_PARTICIPANTS:-1}"
+NUM_EXECUTORS="${NUM_EXECUTORS:-1}"
 
 ROUNDS="${ROUNDS:-20}"
 LOCAL_STEPS="${LOCAL_STEPS:-10}"
 
-CPU_THREADS="${CPU_THREADS:-8}"
+CPU_COUNTS=(20 16 12 8 4)
 
 # For debugging:
 #   EVAL_INTERVAL=999999
@@ -67,12 +86,15 @@ PORT_COUNTER=20010
 # ------------------------------------------------------------
 
 MODELS=(
-    "albert-base-v2"
-   "bert-base-uncased"
-   "distilbert-base-uncased"
-   "bert-large-uncased"
-)
+    #"albert-base-v2"
+    #"bert-base-uncased"
+    #"distilbert-base-uncased"
+    #"bert-large-uncased"
 
+    # Decoder-only causal language models
+    "meta-llama/Llama-3.1-8B"
+    "meta-llama/Llama-3.2-1B"
+)
 
 # ------------------------------------------------------------
 # Experiment methods
@@ -87,8 +109,8 @@ MODELS=(
 EXPERIMENTS=(
     "full:1.0"
     "lora:1.0"
-    "topk:0.10"
-    "topk:0.01"
+    # "topk:0.10"
+    # "topk:0.01"
 )
 
 
@@ -126,6 +148,8 @@ if [ ! -f "${CONFIG_FILE}" ]; then
 PROJECT_DIR=${PROJECT_DIR}
 FEDSCALE_DIR=${FEDSCALE_DIR}
 IMAGE=${IMAGE}
+ROLE=${ROLE}
+AGGREGATOR_IP=${AGGREGATOR_IP}
 
 NUM_PARTICIPANTS=${NUM_PARTICIPANTS}
 NUM_EXECUTORS=${NUM_EXECUTORS}
@@ -133,7 +157,7 @@ NUM_EXECUTORS=${NUM_EXECUTORS}
 ROUNDS=${ROUNDS}
 LOCAL_STEPS=${LOCAL_STEPS}
 
-CPU_THREADS=${CPU_THREADS}
+CPU_COUNTS=$(printf '%s ' "${CPU_COUNTS[@]}")
 
 EVAL_INTERVAL=${EVAL_INTERVAL}
 #SAVE_CHECKPOINT=${SAVE_CHECKPOINT}
@@ -156,11 +180,13 @@ echo
 echo "============================================================"
 echo "FedScale Transformer Communication / Compute Sweep"
 echo "============================================================"
+echo "Role             : ${ROLE}"
+echo "Aggregator IP    : ${AGGREGATOR_IP}"
 echo "Participants     : ${NUM_PARTICIPANTS}"
 echo "Executors        : ${NUM_EXECUTORS}"
 echo "Rounds           : ${ROUNDS}"
 echo "Local steps      : ${LOCAL_STEPS}"
-echo "CPU threads      : ${CPU_THREADS}"
+echo "CPU counts       : ${CPU_COUNTS[*]}"
 echo "Eval interval    : ${EVAL_INTERVAL}"
 echo "Save checkpoints : ${SAVE_CHECKPOINT}"
 echo "Output           : ${EXPERIMENT_DIR}"
@@ -193,6 +219,14 @@ model_short_name() {
             echo "bert_large"
             ;;
 
+        "meta-llama/Llama-3.2-1B")
+            echo "llama_1b"
+            ;;
+
+        "meta-llama/Llama-3.1-8B")
+            echo "llama_8b"
+            ;;
+
         *)
             echo "${model}" \
                 | sed 's|/|_|g' \
@@ -213,7 +247,9 @@ for model in "${MODELS[@]}"; do
         model_short_name "${model}"
     )"
 
-    for experiment in "${EXPERIMENTS[@]}"; do
+    for CPU_THREADS in "${CPU_COUNTS[@]}"; do
+
+        for experiment in "${EXPERIMENTS[@]}"; do
 
         IFS=':' read -r method topk_ratio \
             <<< "${experiment}"
@@ -253,11 +289,19 @@ for model in "${MODELS[@]}"; do
         fi
 
 
-        run_name="${short_model}_${method_name}"
+        run_name="${short_model}_${method_name}_${CPU_THREADS}cpu"
         run_dir="${EXPERIMENT_DIR}/${run_name}"
 
-        done_marker="${run_dir}/DONE"
-        failed_marker="${run_dir}/FAILED"
+        if [ "${ROLE}" = "aggregator" ]; then
+            done_marker="${run_dir}/DONE_AGGREGATOR"
+            failed_marker="${run_dir}/FAILED_AGGREGATOR"
+        elif [ "${ROLE}" = "executor" ]; then
+            done_marker="${run_dir}/DONE_EXECUTOR"
+            failed_marker="${run_dir}/FAILED_EXECUTOR"
+        else
+            done_marker="${run_dir}/DONE"
+            failed_marker="${run_dir}/FAILED"
+        fi
 
         mkdir -p "${run_dir}"
 
@@ -297,6 +341,8 @@ for model in "${MODELS[@]}"; do
         echo "============================================================"
         echo "Starting experiment"
         echo "============================================================"
+        echo "Role           : ${ROLE}"
+        echo "Aggregator IP  : ${AGGREGATOR_IP}"
         echo "Run name       : ${run_name}"
         echo "Model          : ${model}"
         echo "Method         : ${method}"
@@ -321,6 +367,7 @@ for model in "${MODELS[@]}"; do
             --rm \
             --network host \
             --shm-size=8g \
+            --cpus="${CPU_THREADS}" \
             \
             -v "${FEDSCALE_DIR}:/opt/FedScale" \
             -v "${run_dir}:/workspace/results" \
@@ -329,6 +376,7 @@ for model in "${MODELS[@]}"; do
             \
             -e FEDSCALE_HOME=/opt/FedScale \
             -e PYTHONPATH=/opt/FedScale \
+            -e HF_TOKEN="${HF_TOKEN}" \
             \
             -e HF_HUB_DOWNLOAD_TIMEOUT=120 \
             -e HF_HUB_ETAG_TIMEOUT=120 \
@@ -349,6 +397,7 @@ for model in "${MODELS[@]}"; do
             -e TEST_RATIO="${TEST_RATIO}" \
             -e TEST_BSZ="${TEST_BSZ}" \
             \
+            -e PS_IP="${AGGREGATOR_IP}" \
             -e PS_PORT="${PS_PORT}" \
             -e EVAL_INTERVAL="${EVAL_INTERVAL}" \
             \
@@ -359,7 +408,7 @@ for model in "${MODELS[@]}"; do
             -e GEMM_TRACE_METHOD="${method}" \
             \
             "${IMAGE}" \
-            bash /workspace/run-transformer.sh
+            bash /workspace/run-transformer.sh "${ROLE}"
 
         exit_code=$?
 
@@ -409,6 +458,8 @@ for model in "${MODELS[@]}"; do
         # ----------------------------------------------------
         # Show generated files
         # ----------------------------------------------------
+
+        if [[ "${ROLE}" == "executor" || "${ROLE}" == "all" ]]; then
 
         echo
         echo "Communication logs:"
@@ -464,6 +515,23 @@ for model in "${MODELS[@]}"; do
             -name 'executor-*.log' \
             -print
 
+        fi
+
+        if [[ "${ROLE}" == "aggregator" || "${ROLE}" == "all" ]]; then
+            echo
+            echo "Quality log:"
+            if [ -f "${run_dir}/quality.jsonl" ]; then
+                echo "  ${run_dir}/quality.jsonl"
+            else
+                echo "  No quality.jsonl yet."
+            fi
+            echo
+            echo "Aggregator log:"
+            echo "  ${run_dir}/aggregator.log"
+        fi
+
+        done
+
     done
 
 done
@@ -472,6 +540,8 @@ done
 # ------------------------------------------------------------
 # Communication summary
 # ------------------------------------------------------------
+
+if [[ "${ROLE}" == "executor" || "${ROLE}" == "all" ]]; then
 
 echo
 echo "============================================================"
@@ -518,9 +588,13 @@ else
 fi
 
 
+fi
+
 # ------------------------------------------------------------
 # Quality summary
 # ------------------------------------------------------------
+
+if [[ "${ROLE}" == "aggregator" || "${ROLE}" == "all" ]]; then
 
 if find "${EXPERIMENT_DIR}" \
     -name 'quality.jsonl' \
@@ -549,6 +623,8 @@ else
 
 fi
 
+
+fi
 
 # ------------------------------------------------------------
 # Final report
@@ -587,6 +663,5 @@ echo
 echo "To resume this sweep, run:"
 echo
 echo "EXPERIMENT_DIR=${EXPERIMENT_DIR} \\"
-echo "./run-model-sweep.sh"
+echo "./run-model-sweep.sh ${ROLE}"
 echo
-

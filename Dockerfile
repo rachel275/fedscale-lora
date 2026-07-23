@@ -58,13 +58,15 @@ RUN python -m pip install \
 # The version are pinned to work with PyTorch 1.13.1
 #
 
+
+# Transformer / LoRA stack.
 RUN python -m pip install \
-    transformers==4.33.3 \
-    peft==0.5.0 \
-    accelerate==0.23.0 \
-    safetensors==0.3.3 \
-    huggingface-hub==0.17.3 \
-    tokenizers==0.13.3 \
+    "transformers==4.45.0" \
+    "peft==0.13.2" \
+    "accelerate==0.34.2" \
+    "safetensors>=0.4.3" \
+    "huggingface-hub>=0.24.0,<1.0" \
+    "tokenizers>=0.20,<0.21" \
     sentencepiece
 
 WORKDIR /opt/FedScale

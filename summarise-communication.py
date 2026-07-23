@@ -101,7 +101,10 @@ def summarise_run(
         message_counts[direction] += 1
 
         if "client_id" in record:
-            clients.add(int(record["client_id"]))
+            client_id = record.get("client_id")
+
+            if client_id is not None:
+                clients.add(int(client_id))
 
         if "round" in record:
             rounds.add(int(record["round"]))
