@@ -28,11 +28,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN python -m pip install --upgrade pip setuptools wheel
 
-# Install a matched CPU-only PyTorch stack.
+# CPU-only PyTorch stack.
+# Python 3.10 is intentionally retained because it is already known to work
+# with this FedScale environment. PyTorch is upgraded because current
+# bitsandbytes releases require PyTorch >= 2.4.
 RUN python -m pip install \
-    torch==1.13.1+cpu \
-    torchvision==0.14.1+cpu \
-    --extra-index-url https://download.pytorch.org/whl/cpu
+    torch==2.4.1 \
+    torchvision==0.19.1 \
+    --index-url https://download.pytorch.org/whl/cpu
 
 # FedScale/runtime dependencies.
 RUN python -m pip install \
@@ -53,21 +56,34 @@ RUN python -m pip install \
     h5py \
     pillow
 
-# Install these later when we move to transformer/LoRA experiments.
-# Keeping them out initially makes the FedScale baseline easier to debug.
-# The version are pinned to work with PyTorch 1.13.1
-#
-
-
-# Transformer / LoRA stack.
+# Transformer / LoRA / QLoRA stack.
 RUN python -m pip install \
     "transformers==4.45.0" \
     "peft==0.13.2" \
     "accelerate==0.34.2" \
+    "bitsandbytes==0.49.2" \
     "safetensors>=0.4.3" \
     "huggingface-hub>=0.24.0,<1.0" \
     "tokenizers>=0.20,<0.21" \
     sentencepiece
+
+# Fail the image build early if the core LoRA/QLoRA stack cannot import.
+RUN python - <<'PY'
+import torch
+import torchvision
+import transformers
+import peft
+import accelerate
+import bitsandbytes as bnb
+
+print("torch:", torch.__version__)
+print("torchvision:", torchvision.__version__)
+print("transformers:", transformers.__version__)
+print("peft:", peft.__version__)
+print("accelerate:", accelerate.__version__)
+print("bitsandbytes:", bnb.__version__)
+print("cuda available:", torch.cuda.is_available())
+PY
 
 WORKDIR /opt/FedScale
 

@@ -36,11 +36,17 @@ NUM_PARTICIPANTS="${NUM_PARTICIPANTS:-1}"
 ROUNDS="${ROUNDS:-2}"
 LOCAL_STEPS="${LOCAL_STEPS:-1}"
 
+# Supported methods include full, lora, qlora, and topk.
+# METHOD is supplied by run-model-sweep.sh for sweep runs.
 METHOD="${METHOD:-full}"
 MODEL="${MODEL:-albert-base-v2}"
 
 RUN_NAME="${RUN_NAME:-albert_full}"
 RESULTS="${RESULTS:-/workspace/results}"
+
+# Operator profiling output. The sweep script normally sets this to
+# /workspace/results, which is mounted to the host run directory.
+export OPERATOR_PROFILE_DIR="${OPERATOR_PROFILE_DIR:-${RESULTS}}"
 
 TOPK_RATIO="${TOPK_RATIO:-0.01}"
 EVAL_INTERVAL="${EVAL_INTERVAL:-999999}"
@@ -49,6 +55,8 @@ SAVE_CHECKPOINT="${SAVE_CHECKPOINT:-0}"
 
 TEST_RATIO="${TEST_RATIO:-0.01}"
 TEST_BSZ="${TEST_BSZ:-32}"
+
+BATCH_SIZE="${BATCH_SIZE:-2}"
 
 # Address executors use to reach the aggregator.
 #
@@ -60,6 +68,20 @@ TEST_BSZ="${TEST_BSZ:-32}"
 #
 PS_IP="${PS_IP:-127.0.0.1}"
 PS_PORT="${PS_PORT:-20010}"
+
+# ------------------------------------------------------------
+# Validate training method
+# ------------------------------------------------------------
+
+case "${METHOD}" in
+    full|lora|qlora|topk)
+        ;;
+    *)
+        echo "ERROR: Unsupported METHOD='${METHOD}'."
+        echo "Supported methods: full, lora, qlora, topk"
+        exit 1
+        ;;
+esac
 
 
 # ------------------------------------------------------------
@@ -88,7 +110,7 @@ COMMON_ARGS=(
     --experiment_mode simulation
 
     --device_conf_file /opt/FedScale/benchmark/dataset/data/device_info/client_device_capacity
-    --device_avail_file /opt/FedScale/benchmark/dataset/data/device_info/client_behave_trace
+#    --device_avail_file /opt/FedScale/benchmark/dataset/data/device_info/client_behave_trace
 
     --num_executors "${NUM_EXECUTORS}"
     --num_participants "${NUM_PARTICIPANTS}"
@@ -117,7 +139,7 @@ COMMON_ARGS=(
     --learning_rate 4e-5
     --min_learning_rate 1e-5
 
-    --batch_size 2
+    --batch_size "${BATCH_SIZE}"
 
     --use_cuda False
 )
@@ -294,6 +316,7 @@ echo "Model         : ${MODEL}"
 echo "Dataset       : blog"
 echo "Method        : ${METHOD}"
 echo "Top-K ratio   : ${TOPK_RATIO}"
+echo "Profile dir   : ${OPERATOR_PROFILE_DIR}"
 echo "Participants  : ${NUM_PARTICIPANTS}"
 echo "Executors     : ${NUM_EXECUTORS}"
 echo "Rounds        : ${ROUNDS}"
@@ -431,6 +454,18 @@ if [[ "${ROLE}" == "executor" || "${ROLE}" == "all" ]]; then
         echo "ERROR: No client metrics records were generated."
         exit 1
     fi
+fi
+
+if [[ "${ROLE}" == "executor" || "${ROLE}" == "all" ]]; then
+    echo
+    echo "Operator profiler outputs:"
+    find "${OPERATOR_PROFILE_DIR}" \
+        -maxdepth 2 \
+        \( -name 'operator-profile.txt' \
+           -o -name 'all-operators.txt' \
+           -o -name 'matrix-operators.txt' \
+           -o -name 'operator-trace.json' \) \
+        -print 2>/dev/null || true
 fi
 
 

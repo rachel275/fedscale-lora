@@ -26,6 +26,7 @@ AGGREGATOR_IP="${AGGREGATOR_IP:-127.0.0.1}"
 # Methods:
 #   - Full fine-tuning
 #   - LoRA
+#   - QLoRA
 #   - Top-K 10%
 #   - Top-K 1%
 #
@@ -58,10 +59,12 @@ IMAGE="${IMAGE:-fedscale-lora:torch113}"
 NUM_PARTICIPANTS="${NUM_PARTICIPANTS:-1}"
 NUM_EXECUTORS="${NUM_EXECUTORS:-1}"
 
-ROUNDS="${ROUNDS:-20}"
-LOCAL_STEPS="${LOCAL_STEPS:-10}"
+ROUNDS="${ROUNDS:-1}"
+LOCAL_STEPS="${LOCAL_STEPS:-1}"
 
-CPU_COUNTS=(20 16 12 8 4)
+CPU_COUNTS="${CPU_COUNTS:-8}"
+
+BATCH_SIZE=(4)
 
 # For debugging:
 #   EVAL_INTERVAL=999999
@@ -92,7 +95,7 @@ MODELS=(
     #"bert-large-uncased"
 
     # Decoder-only causal language models
-    "meta-llama/Llama-3.1-8B"
+    #"meta-llama/Llama-3.1-8B"
     "meta-llama/Llama-3.2-1B"
 )
 
@@ -107,8 +110,9 @@ MODELS=(
 # ------------------------------------------------------------
 
 EXPERIMENTS=(
-    "full:1.0"
+    # "full:1.0"
     "lora:1.0"
+    "qlora:1.0"
     # "topk:0.10"
     # "topk:0.01"
 )
@@ -157,7 +161,7 @@ NUM_EXECUTORS=${NUM_EXECUTORS}
 ROUNDS=${ROUNDS}
 LOCAL_STEPS=${LOCAL_STEPS}
 
-CPU_COUNTS=$(printf '%s ' "${CPU_COUNTS[@]}")
+CPU_COUNTS=$(printf '%s ' "${CPU_COUNTS}")
 
 EVAL_INTERVAL=${EVAL_INTERVAL}
 #SAVE_CHECKPOINT=${SAVE_CHECKPOINT}
@@ -186,7 +190,7 @@ echo "Participants     : ${NUM_PARTICIPANTS}"
 echo "Executors        : ${NUM_EXECUTORS}"
 echo "Rounds           : ${ROUNDS}"
 echo "Local steps      : ${LOCAL_STEPS}"
-echo "CPU counts       : ${CPU_COUNTS[*]}"
+echo "CPU counts       : ${CPU_COUNTS}"
 echo "Eval interval    : ${EVAL_INTERVAL}"
 echo "Save checkpoints : ${SAVE_CHECKPOINT}"
 echo "Output           : ${EXPERIMENT_DIR}"
@@ -247,7 +251,7 @@ for model in "${MODELS[@]}"; do
         model_short_name "${model}"
     )"
 
-    for CPU_THREADS in "${CPU_COUNTS[@]}"; do
+    for BATCH_S in "${BATCH_SIZE[@]}"; do
 
         for experiment in "${EXPERIMENTS[@]}"; do
 
@@ -289,7 +293,7 @@ for model in "${MODELS[@]}"; do
         fi
 
 
-        run_name="${short_model}_${method_name}_${CPU_THREADS}cpu"
+        run_name="${short_model}_${method_name}_${BATCH_S}bs"
         run_dir="${EXPERIMENT_DIR}/${run_name}"
 
         if [ "${ROLE}" = "aggregator" ]; then
@@ -351,7 +355,7 @@ for model in "${MODELS[@]}"; do
         echo "Executors      : ${NUM_EXECUTORS}"
         echo "Rounds         : ${ROUNDS}"
         echo "Local steps    : ${LOCAL_STEPS}"
-        echo "CPU threads    : ${CPU_THREADS}"
+        echo "CPU threads    : ${CPU_COUNTS}"
         echo "Eval interval  : ${EVAL_INTERVAL}"
         echo "Output         : ${run_dir}"
         echo "============================================================"
@@ -367,7 +371,7 @@ for model in "${MODELS[@]}"; do
             --rm \
             --network host \
             --shm-size=8g \
-            --cpus="${CPU_THREADS}" \
+            --cpus="${CPU_COUNTS}" \
             \
             -v "${FEDSCALE_DIR}:/opt/FedScale" \
             -v "${run_dir}:/workspace/results" \
@@ -381,10 +385,10 @@ for model in "${MODELS[@]}"; do
             -e HF_HUB_DOWNLOAD_TIMEOUT=120 \
             -e HF_HUB_ETAG_TIMEOUT=120 \
             \
-            -e OMP_NUM_THREADS="${CPU_THREADS}" \
-            -e MKL_NUM_THREADS="${CPU_THREADS}" \
-            -e OPENBLAS_NUM_THREADS="${CPU_THREADS}" \
-            -e NUMEXPR_NUM_THREADS="${CPU_THREADS}" \
+            -e OMP_NUM_THREADS="${CPU_COUNTS}" \
+            -e MKL_NUM_THREADS="${CPU_COUNTS}" \
+            -e OPENBLAS_NUM_THREADS="${CPU_COUNTS}" \
+            -e NUMEXPR_NUM_THREADS="${CPU_COUNTS}" \
             \
             -e NUM_EXECUTORS="${NUM_EXECUTORS}" \
             -e NUM_PARTICIPANTS="${NUM_PARTICIPANTS}" \
@@ -396,6 +400,7 @@ for model in "${MODELS[@]}"; do
             -e TOPK_RATIO="${topk_ratio}" \
             -e TEST_RATIO="${TEST_RATIO}" \
             -e TEST_BSZ="${TEST_BSZ}" \
+	    -e BATCH_SIZE="${BATCH_S}" \
             \
             -e PS_IP="${AGGREGATOR_IP}" \
             -e PS_PORT="${PS_PORT}" \
@@ -406,6 +411,7 @@ for model in "${MODELS[@]}"; do
             \
             -e GEMM_TRACE_DIR=/workspace/results \
             -e GEMM_TRACE_METHOD="${method}" \
+            -e OPERATOR_PROFILE_DIR=/workspace/results \
             \
             "${IMAGE}" \
             bash /workspace/run-transformer.sh "${ROLE}"
