@@ -2,17 +2,18 @@
 set -Eeuo pipefail
 
 # ============================================================
-# Native FedScale + Sparrow launcher
+# Native FedScale launcher with optional Sparrow/DCPU support.
 #
-# Leaves the existing run-albert.sh and run-model-sweep.sh
-# completely unchanged.
+# Leaves run-albert.sh and run-model-sweep.sh unchanged.
 #
 # Usage:
 #   ./run-sparrow-fedscale.sh [all|aggregator|executor]
 #
-# Typical one-node smoke test on the Sparrow scheduler node:
-#   ROUNDS=1 LOCAL_STEPS=1 NUM_PARTICIPANTS=1 NUM_EXECUTORS=1 \
-#   ./run-sparrow-fedscale.sh all
+# Normal PyTorch CPU:
+#   USE_DCPU=False ./run-sparrow-fedscale.sh ...
+#
+# Sparrow:
+#   USE_DCPU=True ./run-sparrow-fedscale.sh ...
 # ============================================================
 
 ROLE="${1:-all}"
@@ -28,6 +29,8 @@ esac
 PROJECT_DIR="${PROJECT_DIR:-${HOME}/fedscale-lora}"
 FEDSCALE_DIR="${FEDSCALE_DIR:-${HOME}/FedScale}"
 BASE_RUNNER="${BASE_RUNNER:-${PROJECT_DIR}/run-albert.sh}"
+
+USE_DCPU="${USE_DCPU:-False}"
 
 DCPU_FRONTEND_SOCK="${DCPU_FRONTEND_SOCK:-/tmp/dgemm-fe.sock}"
 DCPU_TRACE_MM="${DCPU_TRACE_MM:-1}"
@@ -51,7 +54,7 @@ SAVE_CHECKPOINT="${SAVE_CHECKPOINT:-0}"
 PS_IP="${PS_IP:-127.0.0.1}"
 PS_PORT="${PS_PORT:-20010}"
 
-RUN_NAME="${RUN_NAME:-sparrow_llama_1b_${METHOD}}"
+RUN_NAME="${RUN_NAME:-fedscale_llama_1b_${METHOD}}"
 RESULTS="${RESULTS:-${PROJECT_DIR}/results/${RUN_NAME}-$(date -u +%Y%m%dT%H%M%SZ)}"
 
 VENV_PYTHON="${FEDSCALE_DIR}/.venv/bin/python"
@@ -70,21 +73,22 @@ die() {
 [[ -x "${VENV_PYTHON}" ]] || \
     die "FedScale virtualenv Python not found: ${VENV_PYTHON}"
 
-if [[ "${ROLE}" == "executor" || "${ROLE}" == "all" ]]; then
+# Only require Sparrow when DCPU is actually enabled.
+if [[ "${USE_DCPU}" == "True" ]] && \
+   [[ "${ROLE}" == "executor" || "${ROLE}" == "all" ]]; then
     [[ -S "${DCPU_FRONTEND_SOCK}" ]] || \
         die "Sparrow frontend socket not found: ${DCPU_FRONTEND_SOCK}"
 fi
 
 mkdir -p "${RESULTS}"
 
-# Verify the exact Python environment we are about to use.
 echo "============================================================"
-echo "FedScale + Sparrow"
+echo "FedScale launcher"
 echo "============================================================"
 echo "Role             : ${ROLE}"
 echo "FedScale         : ${FEDSCALE_DIR}"
 echo "Python           : ${VENV_PYTHON}"
-echo "Frontend socket  : ${DCPU_FRONTEND_SOCK}"
+echo "Use DCPU         : ${USE_DCPU}"
 echo "Model            : ${MODEL}"
 echo "Method           : ${METHOD}"
 echo "Rounds           : ${ROUNDS}"
@@ -93,22 +97,35 @@ echo "Participants     : ${NUM_PARTICIPANTS}"
 echo "Executors        : ${NUM_EXECUTORS}"
 echo "CPU threads      : ${CPU_COUNTS}"
 echo "Batch size       : ${BATCH_SIZE}"
+echo "Aggregator IP    : ${PS_IP}"
+echo "Aggregator port  : ${PS_PORT}"
 echo "Results          : ${RESULTS}"
+
+if [[ "${USE_DCPU}" == "True" ]]; then
+    echo "Frontend socket  : ${DCPU_FRONTEND_SOCK}"
+fi
+
 echo "============================================================"
 
-"${VENV_PYTHON}" - <<'PY'
+# Verify Python. Only import torch_dcpu when requested.
+USE_DCPU="${USE_DCPU}" "${VENV_PYTHON}" - <<'PY'
+import os
 import torch
-import torch_dcpu
+
 print("torch:", torch.__version__)
-print("torch_dcpu: OK")
+
+if os.environ.get("USE_DCPU", "False") == "True":
+    import torch_dcpu
+    print("torch_dcpu: OK")
+else:
+    print("torch_dcpu: disabled")
 PY
 
 # ------------------------------------------------------------
-# Create a temporary Sparrow-specific copy of run-albert.sh.
-# The original file is never modified.
+# Create temporary native copy of run-albert.sh.
 # ------------------------------------------------------------
 
-TMP_RUNNER="$(mktemp /tmp/run-albert-sparrow.XXXXXX.sh)"
+TMP_RUNNER="$(mktemp /tmp/run-albert-native.XXXXXX.sh)"
 trap 'rm -f "${TMP_RUNNER}"' EXIT
 
 cp "${BASE_RUNNER}" "${TMP_RUNNER}"
@@ -146,8 +163,7 @@ changes = [
 for old, new in changes:
     if old not in text:
         raise SystemExit(
-            "ERROR: run-albert.sh no longer contains an expected block; "
-            "refusing to generate a potentially incorrect Sparrow runner:\n"
+            "ERROR: run-albert.sh no longer contains an expected block:\n"
             + old
         )
     text = text.replace(old, new, 1)
@@ -163,12 +179,17 @@ chmod +x "${TMP_RUNNER}"
 
 export FEDSCALE_HOME="${FEDSCALE_DIR}"
 export PYTHONPATH="${FEDSCALE_DIR}"
-
 export PATH="${FEDSCALE_DIR}/.venv/bin:${PATH}"
 
-export DCPU_FRONTEND_SOCK
-export DCPU_TRACE_MM
-export USE_DCPU=True
+export USE_DCPU
+
+if [[ "${USE_DCPU}" == "True" ]]; then
+    export DCPU_FRONTEND_SOCK
+    export DCPU_TRACE_MM
+else
+    unset DCPU_FRONTEND_SOCK || true
+    unset DCPU_TRACE_MM || true
+fi
 
 export OMP_NUM_THREADS="${CPU_COUNTS}"
 export MKL_NUM_THREADS="${CPU_COUNTS}"
@@ -199,12 +220,9 @@ export GEMM_TRACE_DIR="${RESULTS}"
 export GEMM_TRACE_METHOD="${METHOD}"
 export OPERATOR_PROFILE_DIR="${RESULTS}"
 
-# Hugging Face cache can remain in the experiment repo.
-
 echo
-echo "Launching native FedScale with USE_DCPU=True"
+echo "Launching native FedScale with USE_DCPU=${USE_DCPU}"
 echo
 
 cd "${FEDSCALE_DIR}"
 bash "${TMP_RUNNER}" "${ROLE}"
-
