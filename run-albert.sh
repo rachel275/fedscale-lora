@@ -108,6 +108,7 @@ COMMON_ARGS=(
     --ps_port "${PS_PORT}"
 
     --experiment_mode simulation
+    --simulate_aggregation True
 
     --device_conf_file /opt/FedScale/benchmark/dataset/data/device_info/client_device_capacity
 #    --device_avail_file /opt/FedScale/benchmark/dataset/data/device_info/client_behave_trace
