@@ -49,7 +49,7 @@ AGGREGATOR_IP="${AGGREGATOR_IP:-127.0.0.1}"
 
 PROJECT_DIR="${PROJECT_DIR:-/users/rachs/fedscale-lora}"
 FEDSCALE_DIR="${FEDSCALE_DIR:-/users/rachs/FedScale}"
-IMAGE="${IMAGE:-fedscale-lora:torch113}"
+IMAGE="${IMAGE:-fedscale-lora-dev}"
 
 
 # ------------------------------------------------------------
@@ -95,8 +95,12 @@ MODELS=(
     #"bert-large-uncased"
 
     # Decoder-only causal language models
-    #"meta-llama/Llama-3.1-8B"
-    "meta-llama/Llama-3.2-1B"
+    "meta-llama/Llama-3.1-8B"
+    #"meta-llama/Llama-3.2-1B"
+
+    "Qwen/Qwen2.5-14B"
+    "Qwen/Qwen2.5-32B"
+
 )
 
 # ------------------------------------------------------------
@@ -112,7 +116,7 @@ MODELS=(
 EXPERIMENTS=(
     # "full:1.0"
     "lora:1.0"
-    "qlora:1.0"
+    #"qlora:1.0"
     # "topk:0.10"
     # "topk:0.01"
 )
@@ -378,7 +382,6 @@ for model in "${MODELS[@]}"; do
             -v "${PROJECT_DIR}/run-albert.sh:/workspace/run-transformer.sh:ro" \
             -v "${PROJECT_DIR}/huggingface-cache:/root/.cache/huggingface" \
             \
-            -e FEDSCALE_HOME=/opt/FedScale \
             -e PYTHONPATH=/opt/FedScale \
             -e HF_TOKEN="${HF_TOKEN}" \
             \
