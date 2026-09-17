@@ -3,3 +3,6 @@
 2026-09-17T15:39:19Z START Qwen_Qwen2.5_14B_lora_8bs
 2026-09-17T15:41:47Z FAILED Qwen_Qwen2.5_14B_lora_8bs exit_code=130
 2026-09-17T15:43:04Z START Qwen_Qwen2.5_14B_lora_8bs
+2026-09-17T15:49:37Z FAILED Qwen_Qwen2.5_14B_lora_8bs exit_code=1
+2026-09-17T15:50:39Z START Qwen_Qwen2.5_14B_lora_8bs
+2026-09-17T16:55:52Z FAILED Qwen_Qwen2.5_14B_lora_8bs exit_code=130
