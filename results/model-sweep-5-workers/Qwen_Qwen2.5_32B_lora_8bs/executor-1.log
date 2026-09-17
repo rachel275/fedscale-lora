@@ -1,0 +1,21 @@
+(09-17) 07:52:02 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 07:52:02 INFO     [fllibs.py:190] Initializing the model ...
+(09-17) 07:52:04 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-32B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+(09-17) 07:52:04 WARNING  [_http.py:965] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+(09-17) 07:52:04 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-32B/1818d35814b8319459f4bd55ed1ac8709630f003/config.json?%2FQwen%2FQwen2.5-32B%2Fresolve%2Fmain%2Fconfig.json=&etag=%22b85e551961bc528019943e632d376197cb180974%22 "HTTP/1.1 200 OK"
+(09-17) 07:52:04 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-32B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 07:52:04 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-32B/1818d35814b8319459f4bd55ed1ac8709630f003/tokenizer_config.json?%2FQwen%2FQwen2.5-32B%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22ba7e4c5637b9732dadcd66286ce48334e8b31e9e%22 "HTTP/1.1 200 OK"
+(09-17) 07:52:04 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-32B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+(09-17) 07:52:04 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-32B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+(09-17) 07:52:05 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-32B "HTTP/1.1 200 OK"
+(09-17) 07:52:05 INFO     [fllibs.py:231] Installed DGEMM shared arena as PyTorch CPU tensor allocator
+(09-17) 07:52:05 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-32B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 07:52:05 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-32B/1818d35814b8319459f4bd55ed1ac8709630f003/config.json?%2FQwen%2FQwen2.5-32B%2Fresolve%2Fmain%2Fconfig.json=&etag=%22b85e551961bc528019943e632d376197cb180974%22 "HTTP/1.1 200 OK"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+(09-17) 07:52:05 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-32B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 07:52:05 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-32B/1818d35814b8319459f4bd55ed1ac8709630f003/config.json?%2FQwen%2FQwen2.5-32B%2Fresolve%2Fmain%2Fconfig.json=&etag=%22b85e551961bc528019943e632d376197cb180974%22 "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/771 [00:00<?, ?it/s]Loading weights:  25%|██▌       | 194/771 [00:00<00:00, 1866.98it/s]Loading weights:  49%|████▉     | 381/771 [00:00<00:00, 1742.12it/s]Loading weights: 100%|██████████| 771/771 [00:00<00:00, 2452.35it/s]
+(09-17) 07:52:06 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-32B/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 07:52:06 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-32B/1818d35814b8319459f4bd55ed1ac8709630f003/generation_config.json?%2FQwen%2FQwen2.5-32B%2Fresolve%2Fmain%2Fgeneration_config.json=&etag=%22cbbb3133034e192527e5321b4c679154e4819ab8%22 "HTTP/1.1 200 OK"
+(09-17) 07:52:06 INFO     [fllibs.py:267] Migrating pretrained model storage into DGEMM shared arena

@@ -1,0 +1,2 @@
+run_name,method,configured_participants,observed_unique_clients,observed_rounds,upload_messages,download_messages,raw_upload_bytes,raw_download_bytes,serialized_upload_bytes,serialized_download_bytes,serialized_total_bytes,average_total_bytes_per_client_update,serialized_upload_mib,serialized_download_mib,serialized_total_mib
+llama_8b_lora_8bs,lora,,1,9,9,0,0,0,3660,0,3660,406.6666666666667,0.003490447998046875,0.0,0.003490447998046875

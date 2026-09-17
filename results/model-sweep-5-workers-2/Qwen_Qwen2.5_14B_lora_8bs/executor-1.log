@@ -1,0 +1,443 @@
+(09-17) 15:43:08 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 15:43:08 INFO     [fllibs.py:190] Initializing the model ...
+(09-17) 15:43:09 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 15:43:09 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Fconfig.json=&etag=%2283bba6e26639fb152bd0077977cf6ea8312b42a9%22 "HTTP/1.1 200 OK"
+(09-17) 15:43:10 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+(09-17) 15:43:10 WARNING  [_http.py:965] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+(09-17) 15:43:10 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/tokenizer_config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22ba7e4c5637b9732dadcd66286ce48334e8b31e9e%22 "HTTP/1.1 200 OK"
+(09-17) 15:43:10 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-14B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+(09-17) 15:43:10 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-14B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+(09-17) 15:43:10 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-14B "HTTP/1.1 200 OK"
+(09-17) 15:43:10 INFO     [fllibs.py:231] Installed DGEMM shared arena as PyTorch CPU tensor allocator
+(09-17) 15:43:10 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 15:43:10 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Fconfig.json=&etag=%2283bba6e26639fb152bd0077977cf6ea8312b42a9%22 "HTTP/1.1 200 OK"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+(09-17) 15:43:11 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 15:43:11 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Fconfig.json=&etag=%2283bba6e26639fb152bd0077977cf6ea8312b42a9%22 "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/579 [00:00<?, ?it/s]Loading weights:  76%|███████▌  | 441/579 [00:00<00:00, 4387.97it/s]Loading weights: 100%|██████████| 579/579 [00:00<00:00, 4212.27it/s]
+(09-17) 15:43:11 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 15:43:11 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/generation_config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Fgeneration_config.json=&etag=%22cbbb3133034e192527e5321b4c679154e4819ab8%22 "HTTP/1.1 200 OK"
+(09-17) 15:43:11 INFO     [fllibs.py:267] Migrating pretrained model storage into DGEMM shared arena
+(09-17) 15:43:15 INFO     [fllibs.py:173] DGEMM arena migration complete: 579 parameters, 0 buffers migrated; 27.511 GiB migrated, 0.000 GiB already arena-backed, 27.511 GiB total tensor storage
+(09-17) 15:43:15 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/organizations/kernels-community/overview "HTTP/1.1 200 OK"
+(09-17) 15:43:15 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/kernels/kernels-community/quantization-bitsandbytes/refs "HTTP/1.1 200 OK"
+(09-17) 15:43:15 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/kernels/kernels-community/quantization-bitsandbytes/tree/20fadeb4b8240036fa59bacf96d8c7fbe531bddc/build?recursive=false&expand=false "HTTP/1.1 200 OK"
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]Fetching 7 files: 100%|██████████| 7/7 [00:00<00:00, 705.08it/s]
+(09-17) 15:43:16 INFO     [fllibs.py:356] DGEMM arena parameter coverage: 14776325120/14776325120 params (100.00%), 27.535/27.535 GiB (100.00% bytes)
+[dcpu] routed base linear 1: 5120 -> 5120, arena total=0.049 GiB
+[dcpu] routed base linear 2: 5120 -> 1024, arena total=0.059 GiB
+[dcpu] routed base linear 3: 5120 -> 5120, arena total=0.107 GiB
+[dcpu] routed base linear 4: 5120 -> 1024, arena total=0.117 GiB
+[dcpu] routed base linear 5: 5120 -> 5120, arena total=0.166 GiB
+[dcpu] routed base linear 6: 5120 -> 1024, arena total=0.176 GiB
+[dcpu] routed base linear 7: 5120 -> 5120, arena total=0.225 GiB
+[dcpu] routed base linear 8: 5120 -> 1024, arena total=0.234 GiB
+[dcpu] routed base linear 9: 5120 -> 5120, arena total=0.283 GiB
+[dcpu] routed base linear 10: 5120 -> 1024, arena total=0.293 GiB
+[dcpu] routed base linear 11: 5120 -> 5120, arena total=0.342 GiB
+[dcpu] routed base linear 12: 5120 -> 1024, arena total=0.352 GiB
+[dcpu] routed base linear 13: 5120 -> 5120, arena total=0.400 GiB
+[dcpu] routed base linear 14: 5120 -> 1024, arena total=0.410 GiB
+[dcpu] routed base linear 15: 5120 -> 5120, arena total=0.459 GiB
+[dcpu] routed base linear 16: 5120 -> 1024, arena total=0.469 GiB
+[dcpu] routed base linear 17: 5120 -> 5120, arena total=0.518 GiB
+[dcpu] routed base linear 18: 5120 -> 1024, arena total=0.527 GiB
+[dcpu] routed base linear 19: 5120 -> 5120, arena total=0.576 GiB
+[dcpu] routed base linear 20: 5120 -> 1024, arena total=0.586 GiB
+[dcpu] routed base linear 21: 5120 -> 5120, arena total=0.635 GiB
+[dcpu] routed base linear 22: 5120 -> 1024, arena total=0.645 GiB
+[dcpu] routed base linear 23: 5120 -> 5120, arena total=0.693 GiB
+[dcpu] routed base linear 24: 5120 -> 1024, arena total=0.703 GiB
+[dcpu] routed base linear 25: 5120 -> 5120, arena total=0.752 GiB
+[dcpu] routed base linear 26: 5120 -> 1024, arena total=0.762 GiB
+[dcpu] routed base linear 27: 5120 -> 5120, arena total=0.811 GiB
+[dcpu] routed base linear 28: 5120 -> 1024, arena total=0.820 GiB
+[dcpu] routed base linear 29: 5120 -> 5120, arena total=0.869 GiB
+[dcpu] routed base linear 30: 5120 -> 1024, arena total=0.879 GiB
+[dcpu] routed base linear 31: 5120 -> 5120, arena total=0.928 GiB
+[dcpu] routed base linear 32: 5120 -> 1024, arena total=0.938 GiB
+[dcpu] routed base linear 33: 5120 -> 5120, arena total=0.986 GiB
+[dcpu] routed base linear 34: 5120 -> 1024, arena total=0.996 GiB
+[dcpu] routed base linear 35: 5120 -> 5120, arena total=1.045 GiB
+[dcpu] routed base linear 36: 5120 -> 1024, arena total=1.055 GiB
+[dcpu] routed base linear 37: 5120 -> 5120, arena total=1.104 GiB
+[dcpu] routed base linear 38: 5120 -> 1024, arena total=1.113 GiB
+[dcpu] routed base linear 39: 5120 -> 5120, arena total=1.162 GiB
+[dcpu] routed base linear 40: 5120 -> 1024, arena total=1.172 GiB
+[dcpu] routed base linear 41: 5120 -> 5120, arena total=1.221 GiB
+[dcpu] routed base linear 42: 5120 -> 1024, arena total=1.230 GiB
+[dcpu] routed base linear 43: 5120 -> 5120, arena total=1.279 GiB
+[dcpu] routed base linear 44: 5120 -> 1024, arena total=1.289 GiB
+[dcpu] routed base linear 45: 5120 -> 5120, arena total=1.338 GiB
+[dcpu] routed base linear 46: 5120 -> 1024, arena total=1.348 GiB
+[dcpu] routed base linear 47: 5120 -> 5120, arena total=1.396 GiB
+[dcpu] routed base linear 48: 5120 -> 1024, arena total=1.406 GiB
+[dcpu] routed base linear 49: 5120 -> 5120, arena total=1.455 GiB
+[dcpu] routed base linear 50: 5120 -> 1024, arena total=1.465 GiB
+[dcpu] routed base linear 51: 5120 -> 5120, arena total=1.514 GiB
+[dcpu] routed base linear 52: 5120 -> 1024, arena total=1.523 GiB
+[dcpu] routed base linear 53: 5120 -> 5120, arena total=1.572 GiB
+[dcpu] routed base linear 54: 5120 -> 1024, arena total=1.582 GiB
+[dcpu] routed base linear 55: 5120 -> 5120, arena total=1.631 GiB
+[dcpu] routed base linear 56: 5120 -> 1024, arena total=1.641 GiB
+[dcpu] routed base linear 57: 5120 -> 5120, arena total=1.689 GiB
+[dcpu] routed base linear 58: 5120 -> 1024, arena total=1.699 GiB
+[dcpu] routed base linear 59: 5120 -> 5120, arena total=1.748 GiB
+[dcpu] routed base linear 60: 5120 -> 1024, arena total=1.758 GiB
+[dcpu] routed base linear 61: 5120 -> 5120, arena total=1.807 GiB
+[dcpu] routed base linear 62: 5120 -> 1024, arena total=1.816 GiB
+[dcpu] routed base linear 63: 5120 -> 5120, arena total=1.865 GiB
+[dcpu] routed base linear 64: 5120 -> 1024, arena total=1.875 GiB
+[dcpu] routed base linear 65: 5120 -> 5120, arena total=1.924 GiB
+[dcpu] routed base linear 66: 5120 -> 1024, arena total=1.934 GiB
+[dcpu] routed base linear 67: 5120 -> 5120, arena total=1.982 GiB
+[dcpu] routed base linear 68: 5120 -> 1024, arena total=1.992 GiB
+[dcpu] routed base linear 69: 5120 -> 5120, arena total=2.041 GiB
+[dcpu] routed base linear 70: 5120 -> 1024, arena total=2.051 GiB
+[dcpu] routed base linear 71: 5120 -> 5120, arena total=2.100 GiB
+[dcpu] routed base linear 72: 5120 -> 1024, arena total=2.109 GiB
+[dcpu] routed base linear 73: 5120 -> 5120, arena total=2.158 GiB
+[dcpu] routed base linear 74: 5120 -> 1024, arena total=2.168 GiB
+[dcpu] routed base linear 75: 5120 -> 5120, arena total=2.217 GiB
+[dcpu] routed base linear 76: 5120 -> 1024, arena total=2.227 GiB
+[dcpu] routed base linear 77: 5120 -> 5120, arena total=2.275 GiB
+[dcpu] routed base linear 78: 5120 -> 1024, arena total=2.285 GiB
+[dcpu] routed base linear 79: 5120 -> 5120, arena total=2.334 GiB
+[dcpu] routed base linear 80: 5120 -> 1024, arena total=2.344 GiB
+[dcpu] routed base linear 81: 5120 -> 5120, arena total=2.393 GiB
+[dcpu] routed base linear 82: 5120 -> 1024, arena total=2.402 GiB
+[dcpu] routed base linear 83: 5120 -> 5120, arena total=2.451 GiB
+[dcpu] routed base linear 84: 5120 -> 1024, arena total=2.461 GiB
+[dcpu] routed base linear 85: 5120 -> 5120, arena total=2.510 GiB
+[dcpu] routed base linear 86: 5120 -> 1024, arena total=2.520 GiB
+[dcpu] routed base linear 87: 5120 -> 5120, arena total=2.568 GiB
+[dcpu] routed base linear 88: 5120 -> 1024, arena total=2.578 GiB
+[dcpu] routed base linear 89: 5120 -> 5120, arena total=2.627 GiB
+[dcpu] routed base linear 90: 5120 -> 1024, arena total=2.637 GiB
+[dcpu] routed base linear 91: 5120 -> 5120, arena total=2.686 GiB
+[dcpu] routed base linear 92: 5120 -> 1024, arena total=2.695 GiB
+[dcpu] routed base linear 93: 5120 -> 5120, arena total=2.744 GiB
+[dcpu] routed base linear 94: 5120 -> 1024, arena total=2.754 GiB
+[dcpu] routed base linear 95: 5120 -> 5120, arena total=2.803 GiB
+[dcpu] routed base linear 96: 5120 -> 1024, arena total=2.812 GiB
+[dcpu] routed 96 PEFT base linears; arena-backed weights=2.812 GiB
+(09-17) 15:43:16 INFO     [fllibs.py:375] DCPU CPU-resident routing installed for 96 PEFT base Linear layers
+trainable params: 6,291,456 || all params: 14,776,325,120 || trainable%: 0.0426
+(09-17) 15:43:16 INFO     [executor.py:72] GEMM tracer attached to 433 Linear modules; output=/users/rachs/fedscale-lora/results/model-sweep-5-workers-2/Qwen_Qwen2.5_14B_lora_8bs/gemm-executor-1.jsonl
+(09-17) 15:43:16 INFO     [executor.py:121] (EXECUTOR:1) is setting up environ ...
+(09-17) 15:43:16 INFO     [nlp.py:120] Loading features from cached file /users/rachs/FedScale/benchmark/dataset/data/blog/train/Qwen_Qwen2.5-14B_cached_lm_256
+(09-17) 15:43:19 INFO     [nlp.py:120] Loading features from cached file /users/rachs/FedScale/benchmark/dataset/data/blog/test/Qwen_Qwen2.5-14B_cached_lm_256
+(09-17) 15:43:20 INFO     [executor.py:167] Data partitioner starts ...
+(09-17) 15:43:20 INFO     [divide_data.py:105] Randomly partitioning data, 502517 samples...
+(09-17) 15:43:20 INFO     [divide_data.py:105] Randomly partitioning data, 59723 samples...
+(09-17) 15:43:20 INFO     [executor.py:185] Data partitioner completes ...
+(09-17) 15:43:20 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 10.10.1.1 %%%%%%%%%%
+(09-17) 15:43:20 INFO     [executor.py:648] Start monitoring events ...
+(09-17) 15:43:21 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 1
+(09-17) 15:43:22 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 15:43:22 INFO     [executor.py:584] testing_handler: after select_dataset
+(09-17) 15:43:22 INFO     [model_test_module.py:66] TEST DEBUG: before model.to device=cpu
+(09-17) 15:43:22 INFO     [model_test_module.py:71] TEST DEBUG: after model.to
+(09-17) 15:43:22 INFO     [model_test_module.py:73] TEST DEBUG: after model.eval
+(09-17) 15:43:22 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+(09-17) 15:43:34 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:43:34 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=1024 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-13924
+[dcpu] mm 2048x1024x5120 -> cpu-fallback (unprofitable)
+[dcpu decision] M=2048 N=5120 K=5120 workers=5 min_M=1 min_N=5 node_gflops=5202 link_mbps=100000 gain_us=-4070
+[dcpu] mm 2048x5120x5120 -> cpu-fallback (unprofitable)

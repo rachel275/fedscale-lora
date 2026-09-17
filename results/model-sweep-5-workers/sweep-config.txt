@@ -1,0 +1,24 @@
+PROJECT_DIR=/users/rachs/fedscale-lora
+FEDSCALE_DIR=/users/rachs/FedScale
+IMAGE=fedscale-lora-dev
+ROLE=executor
+AGGREGATOR_IP=10.10.1.1
+
+NUM_PARTICIPANTS=1
+NUM_EXECUTORS=1
+
+ROUNDS=10
+LOCAL_STEPS=10
+
+CPU_COUNTS=28 
+
+EVAL_INTERVAL=5
+SAVE_CHECKPOINT=0
+CLEAR_HF_CACHE_BETWEEN_RUNS=1
+HF_CACHE_DIR=/users/leping/ssd/rachs/huggingface-cache
+
+MODELS:
+  Qwen/Qwen2.5-14B
+
+EXPERIMENTS:
+  lora:1.0

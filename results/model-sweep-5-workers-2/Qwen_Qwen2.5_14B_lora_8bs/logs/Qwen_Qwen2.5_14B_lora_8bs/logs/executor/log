@@ -1,0 +1,102 @@
+(09-17) 15:39:26 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 15:39:26 INFO     [fllibs.py:190] Initializing the model ...
+(09-17) 15:39:27 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 15:39:27 WARNING  [_http.py:965] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+(09-17) 15:39:27 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Fconfig.json=&etag=%2283bba6e26639fb152bd0077977cf6ea8312b42a9%22 "HTTP/1.1 200 OK"
+(09-17) 15:39:27 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 15:39:27 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/tokenizer_config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22ba7e4c5637b9732dadcd66286ce48334e8b31e9e%22 "HTTP/1.1 200 OK"
+(09-17) 15:39:27 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-14B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+(09-17) 15:39:27 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-14B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+(09-17) 15:39:28 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-14B "HTTP/1.1 200 OK"
+(09-17) 15:39:28 INFO     [fllibs.py:231] Installed DGEMM shared arena as PyTorch CPU tensor allocator
+(09-17) 15:39:28 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 15:39:28 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Fconfig.json=&etag=%2283bba6e26639fb152bd0077977cf6ea8312b42a9%22 "HTTP/1.1 200 OK"
+(09-17) 15:39:28 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 15:39:28 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Fconfig.json=&etag=%2283bba6e26639fb152bd0077977cf6ea8312b42a9%22 "HTTP/1.1 200 OK"
+(09-17) 15:39:29 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 15:39:29 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/generation_config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Fgeneration_config.json=&etag=%22cbbb3133034e192527e5321b4c679154e4819ab8%22 "HTTP/1.1 200 OK"
+(09-17) 15:39:29 INFO     [fllibs.py:267] Migrating pretrained model storage into DGEMM shared arena
+(09-17) 15:39:53 INFO     [fllibs.py:173] DGEMM arena migration complete: 579 parameters, 0 buffers migrated; 27.511 GiB migrated, 0.000 GiB already arena-backed, 27.511 GiB total tensor storage
+(09-17) 15:39:53 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/organizations/kernels-community/overview "HTTP/1.1 200 OK"
+(09-17) 15:39:53 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/kernels/kernels-community/quantization-bitsandbytes/refs "HTTP/1.1 200 OK"
+(09-17) 15:39:53 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/kernels/kernels-community/quantization-bitsandbytes/tree/20fadeb4b8240036fa59bacf96d8c7fbe531bddc/build?recursive=false&expand=false "HTTP/1.1 200 OK"
+(09-17) 15:39:55 INFO     [fllibs.py:356] DGEMM arena parameter coverage: 14776325120/14776325120 params (100.00%), 27.535/27.535 GiB (100.00% bytes)
+(09-17) 15:39:55 INFO     [fllibs.py:375] DCPU CPU-resident routing installed for 96 PEFT base Linear layers
+(09-17) 15:39:55 INFO     [executor.py:72] GEMM tracer attached to 433 Linear modules; output=/users/rachs/fedscale-lora/results/model-sweep-5-workers-2/Qwen_Qwen2.5_14B_lora_8bs/gemm-executor-1.jsonl
+(09-17) 15:39:55 INFO     [executor.py:121] (EXECUTOR:1) is setting up environ ...
+(09-17) 15:39:55 INFO     [nlp.py:120] Loading features from cached file /users/rachs/FedScale/benchmark/dataset/data/blog/train/Qwen_Qwen2.5-14B_cached_lm_256
+(09-17) 15:39:58 INFO     [nlp.py:120] Loading features from cached file /users/rachs/FedScale/benchmark/dataset/data/blog/test/Qwen_Qwen2.5-14B_cached_lm_256
+(09-17) 15:39:59 INFO     [executor.py:167] Data partitioner starts ...
+(09-17) 15:39:59 INFO     [divide_data.py:105] Randomly partitioning data, 502517 samples...
+(09-17) 15:39:59 INFO     [divide_data.py:105] Randomly partitioning data, 59723 samples...
+(09-17) 15:39:59 INFO     [executor.py:185] Data partitioner completes ...
+(09-17) 15:39:59 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 10.10.1.1 %%%%%%%%%%
+(09-17) 15:39:59 INFO     [executor.py:648] Start monitoring events ...
+(09-17) 15:40:00 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 1
+(09-17) 15:40:01 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 15:40:01 INFO     [executor.py:584] testing_handler: after select_dataset
+(09-17) 15:40:01 INFO     [model_test_module.py:66] TEST DEBUG: before model.to device=cpu
+(09-17) 15:40:01 INFO     [model_test_module.py:71] TEST DEBUG: after model.to
+(09-17) 15:40:01 INFO     [model_test_module.py:73] TEST DEBUG: after model.eval
+(09-17) 15:40:01 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-17) 15:40:12 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:40:13 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-17) 15:40:23 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:40:23 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-17) 15:40:33 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:40:34 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-17) 15:40:44 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:40:44 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-17) 15:40:54 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:40:54 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-17) 15:41:04 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:41:04 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-17) 15:41:15 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:41:15 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-17) 15:41:25 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:41:25 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-17) 15:41:37 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:41:37 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-17) 15:43:08 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 15:43:08 INFO     [fllibs.py:190] Initializing the model ...
+(09-17) 15:43:09 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 15:43:09 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Fconfig.json=&etag=%2283bba6e26639fb152bd0077977cf6ea8312b42a9%22 "HTTP/1.1 200 OK"
+(09-17) 15:43:10 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 15:43:10 WARNING  [_http.py:965] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+(09-17) 15:43:10 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/tokenizer_config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22ba7e4c5637b9732dadcd66286ce48334e8b31e9e%22 "HTTP/1.1 200 OK"
+(09-17) 15:43:10 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-14B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+(09-17) 15:43:10 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-14B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+(09-17) 15:43:10 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-14B "HTTP/1.1 200 OK"
+(09-17) 15:43:10 INFO     [fllibs.py:231] Installed DGEMM shared arena as PyTorch CPU tensor allocator
+(09-17) 15:43:10 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 15:43:10 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Fconfig.json=&etag=%2283bba6e26639fb152bd0077977cf6ea8312b42a9%22 "HTTP/1.1 200 OK"
+(09-17) 15:43:11 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 15:43:11 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Fconfig.json=&etag=%2283bba6e26639fb152bd0077977cf6ea8312b42a9%22 "HTTP/1.1 200 OK"
+(09-17) 15:43:11 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+(09-17) 15:43:11 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/generation_config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Fgeneration_config.json=&etag=%22cbbb3133034e192527e5321b4c679154e4819ab8%22 "HTTP/1.1 200 OK"
+(09-17) 15:43:11 INFO     [fllibs.py:267] Migrating pretrained model storage into DGEMM shared arena
+(09-17) 15:43:15 INFO     [fllibs.py:173] DGEMM arena migration complete: 579 parameters, 0 buffers migrated; 27.511 GiB migrated, 0.000 GiB already arena-backed, 27.511 GiB total tensor storage
+(09-17) 15:43:15 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/organizations/kernels-community/overview "HTTP/1.1 200 OK"
+(09-17) 15:43:15 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/kernels/kernels-community/quantization-bitsandbytes/refs "HTTP/1.1 200 OK"
+(09-17) 15:43:15 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/kernels/kernels-community/quantization-bitsandbytes/tree/20fadeb4b8240036fa59bacf96d8c7fbe531bddc/build?recursive=false&expand=false "HTTP/1.1 200 OK"
+(09-17) 15:43:16 INFO     [fllibs.py:356] DGEMM arena parameter coverage: 14776325120/14776325120 params (100.00%), 27.535/27.535 GiB (100.00% bytes)
+(09-17) 15:43:16 INFO     [fllibs.py:375] DCPU CPU-resident routing installed for 96 PEFT base Linear layers
+(09-17) 15:43:16 INFO     [executor.py:72] GEMM tracer attached to 433 Linear modules; output=/users/rachs/fedscale-lora/results/model-sweep-5-workers-2/Qwen_Qwen2.5_14B_lora_8bs/gemm-executor-1.jsonl
+(09-17) 15:43:16 INFO     [executor.py:121] (EXECUTOR:1) is setting up environ ...
+(09-17) 15:43:16 INFO     [nlp.py:120] Loading features from cached file /users/rachs/FedScale/benchmark/dataset/data/blog/train/Qwen_Qwen2.5-14B_cached_lm_256
+(09-17) 15:43:19 INFO     [nlp.py:120] Loading features from cached file /users/rachs/FedScale/benchmark/dataset/data/blog/test/Qwen_Qwen2.5-14B_cached_lm_256
+(09-17) 15:43:20 INFO     [executor.py:167] Data partitioner starts ...
+(09-17) 15:43:20 INFO     [divide_data.py:105] Randomly partitioning data, 502517 samples...
+(09-17) 15:43:20 INFO     [divide_data.py:105] Randomly partitioning data, 59723 samples...
+(09-17) 15:43:20 INFO     [executor.py:185] Data partitioner completes ...
+(09-17) 15:43:20 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 10.10.1.1 %%%%%%%%%%
+(09-17) 15:43:20 INFO     [executor.py:648] Start monitoring events ...
+(09-17) 15:43:21 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 1
+(09-17) 15:43:22 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 15:43:22 INFO     [executor.py:584] testing_handler: after select_dataset
+(09-17) 15:43:22 INFO     [model_test_module.py:66] TEST DEBUG: before model.to device=cpu
+(09-17) 15:43:22 INFO     [model_test_module.py:71] TEST DEBUG: after model.to
+(09-17) 15:43:22 INFO     [model_test_module.py:73] TEST DEBUG: after model.eval
+(09-17) 15:43:22 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-17) 15:43:34 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:43:34 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)

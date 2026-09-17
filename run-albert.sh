@@ -151,9 +151,10 @@ COMMON_ARGS=(
 # ------------------------------------------------------------
 
 if [ "${SAVE_CHECKPOINT}" = "1" ]; then
-    COMMON_ARGS+=(--save_checkpoint)
+    COMMON_ARGS+=(--save_checkpoint True)
+else
+    COMMON_ARGS+=(--save_checkpoint False)
 fi
-
 
 # ------------------------------------------------------------
 # Process management

@@ -57,7 +57,7 @@ PS_PORT="${PS_PORT:-20010}"
 RUN_NAME="${RUN_NAME:-fedscale_llama_1b_${METHOD}}"
 RESULTS="${RESULTS:-${PROJECT_DIR}/results/${RUN_NAME}-$(date -u +%Y%m%dT%H%M%SZ)}"
 
-VENV_PYTHON="${FEDSCALE_DIR}/.venv/bin/python"
+VENV_PYTHON="${VENV_PYTHON:-/users/rachs/.venv/qlora/bin/python}"
 
 die() {
     echo "ERROR: $*" >&2
@@ -179,8 +179,7 @@ chmod +x "${TMP_RUNNER}"
 
 export FEDSCALE_HOME="${FEDSCALE_DIR}"
 export PYTHONPATH="${FEDSCALE_DIR}"
-export PATH="${FEDSCALE_DIR}/.venv/bin:${PATH}"
-
+export PATH="$(dirname "${VENV_PYTHON}"):${PATH}"
 export USE_DCPU
 
 if [[ "${USE_DCPU}" == "True" ]]; then

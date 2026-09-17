@@ -1,0 +1,390 @@
+(09-16) 16:15:11 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-16) 16:15:11 INFO     [fllibs.py:190] Initializing the model ...
+(09-16) 16:15:13 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+(09-16) 16:15:13 WARNING  [_http.py:965] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+(09-16) 16:15:13 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Fconfig.json=&etag=%2283bba6e26639fb152bd0077977cf6ea8312b42a9%22 "HTTP/1.1 200 OK"
+(09-16) 16:15:13 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+(09-16) 16:15:13 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/tokenizer_config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22ba7e4c5637b9732dadcd66286ce48334e8b31e9e%22 "HTTP/1.1 200 OK"
+(09-16) 16:15:13 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-14B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+(09-16) 16:15:13 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-14B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+(09-16) 16:15:14 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-14B "HTTP/1.1 200 OK"
+(09-16) 16:15:14 INFO     [fllibs.py:231] Installed DGEMM shared arena as PyTorch CPU tensor allocator
+(09-16) 16:15:14 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+(09-16) 16:15:14 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Fconfig.json=&etag=%2283bba6e26639fb152bd0077977cf6ea8312b42a9%22 "HTTP/1.1 200 OK"
+(09-16) 16:15:14 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+(09-16) 16:15:14 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Fconfig.json=&etag=%2283bba6e26639fb152bd0077977cf6ea8312b42a9%22 "HTTP/1.1 200 OK"
+(09-16) 16:15:15 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-14B/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+(09-16) 16:15:15 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-14B/97e1e76335b7017d8f67c08a19d103c0504298c9/generation_config.json?%2FQwen%2FQwen2.5-14B%2Fresolve%2Fmain%2Fgeneration_config.json=&etag=%22cbbb3133034e192527e5321b4c679154e4819ab8%22 "HTTP/1.1 200 OK"
+(09-16) 16:15:15 INFO     [fllibs.py:267] Migrating pretrained model storage into DGEMM shared arena
+(09-16) 16:15:23 INFO     [fllibs.py:173] DGEMM arena migration complete: 579 parameters, 0 buffers migrated; 27.511 GiB migrated, 0.000 GiB already arena-backed, 27.511 GiB total tensor storage
+(09-16) 16:15:23 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/organizations/kernels-community/overview "HTTP/1.1 200 OK"
+(09-16) 16:15:23 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/kernels/kernels-community/quantization-bitsandbytes/refs "HTTP/1.1 200 OK"
+(09-16) 16:15:23 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/kernels/kernels-community/quantization-bitsandbytes/tree/20fadeb4b8240036fa59bacf96d8c7fbe531bddc/build?recursive=false&expand=false "HTTP/1.1 200 OK"
+(09-16) 16:15:24 INFO     [fllibs.py:356] DGEMM arena parameter coverage: 14776325120/14776325120 params (100.00%), 27.535/27.535 GiB (100.00% bytes)
+(09-16) 16:15:24 INFO     [fllibs.py:375] DCPU CPU-resident routing installed for 96 PEFT base Linear layers
+(09-16) 16:15:24 INFO     [executor.py:72] GEMM tracer attached to 433 Linear modules; output=/users/rachs/fedscale-lora/results/model-sweep-20260916T161507Z/Qwen_Qwen2.5_14B_lora_8bs/gemm-executor-1.jsonl
+(09-16) 16:15:24 INFO     [executor.py:121] (EXECUTOR:1) is setting up environ ...
+(09-16) 16:15:24 INFO     [nlp.py:120] Loading features from cached file /users/rachs/FedScale/benchmark/dataset/data/blog/train/Qwen_Qwen2.5-14B_cached_lm_256
+(09-16) 16:15:27 INFO     [nlp.py:120] Loading features from cached file /users/rachs/FedScale/benchmark/dataset/data/blog/test/Qwen_Qwen2.5-14B_cached_lm_256
+(09-16) 16:15:27 INFO     [executor.py:167] Data partitioner starts ...
+(09-16) 16:15:27 INFO     [divide_data.py:105] Randomly partitioning data, 502517 samples...
+(09-16) 16:15:27 INFO     [divide_data.py:105] Randomly partitioning data, 59723 samples...
+(09-16) 16:15:27 INFO     [executor.py:185] Data partitioner completes ...
+(09-16) 16:15:27 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 10.10.1.1 %%%%%%%%%%
+(09-16) 16:15:27 INFO     [executor.py:648] Start monitoring events ...
+(09-16) 16:15:28 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 1
+(09-16) 16:15:29 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-16) 16:15:29 INFO     [executor.py:584] testing_handler: after select_dataset
+(09-16) 16:15:29 INFO     [model_test_module.py:66] TEST DEBUG: before model.to device=cpu
+(09-16) 16:15:30 INFO     [model_test_module.py:71] TEST DEBUG: after model.to
+(09-16) 16:15:30 INFO     [model_test_module.py:73] TEST DEBUG: after model.eval
+(09-16) 16:15:30 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:15:46 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:15:46 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:16:03 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:16:03 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:16:18 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:16:18 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:16:33 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:16:33 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:16:48 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:16:48 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:17:03 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:17:03 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:17:19 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:17:19 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:17:33 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:17:33 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:17:46 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:17:46 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:17:58 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:17:58 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:18:10 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:18:10 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:18:26 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:18:26 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:18:41 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:18:41 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:18:56 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:18:56 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:19:12 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:19:12 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:19:27 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:19:27 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:19:43 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:19:43 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:19:58 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:19:58 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:20:13 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:20:13 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:20:28 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:20:28 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:20:44 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:20:44 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:20:59 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:20:59 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:21:14 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:21:14 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:21:30 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:21:30 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:21:44 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:21:45 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:22:00 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:22:00 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:22:15 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:22:15 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:22:30 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:22:30 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:22:43 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:22:43 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:22:59 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:22:59 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:23:14 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:23:14 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:23:29 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:23:29 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:23:44 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:23:44 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:23:58 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:23:58 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:24:13 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:24:13 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:24:28 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:24:28 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:24:42 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:24:43 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:24:57 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:24:57 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:25:12 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:25:12 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:25:27 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:25:27 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:25:43 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:25:43 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:25:58 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:25:58 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:26:12 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:26:12 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:26:27 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:26:27 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:26:41 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:26:41 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:26:56 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:26:56 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:27:11 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:27:11 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:27:26 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:27:26 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:27:41 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:27:41 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:27:56 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:27:57 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:28:11 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:28:11 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:28:26 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:28:27 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:28:42 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:28:42 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:28:56 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:28:56 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:29:11 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:29:11 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:29:26 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:29:26 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:29:41 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:29:41 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:29:55 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:29:56 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:30:11 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:30:11 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:30:26 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:30:26 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:30:41 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:30:41 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:30:56 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:30:56 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:31:11 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:31:11 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:31:26 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:31:26 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:31:41 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:31:41 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:31:56 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:31:56 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:32:11 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:32:11 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:32:26 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:32:26 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:32:41 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:32:41 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:32:56 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:32:56 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:33:11 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:33:12 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:33:26 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:33:26 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:33:41 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:33:41 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 16:33:56 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:33:56 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(5, 256)
+(09-16) 16:34:08 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 16:34:08 INFO     [model_test_module.py:411] Rank 1: Test set: Average loss: 11.0334, Top-1 Accuracy: 1186.0/597 (0.0078), Top-5 Accuracy: 0.0478
+(09-16) 16:34:08 INFO     [torch_client.py:689] Test results: Eval_time 1118.3911, test_loss 11.0334, test_accuracy 0.78%, test_5_accuracy 4.78% 
+
+(09-16) 16:34:08 INFO     [executor.py:594] testing_handler: after client.test
+(09-16) 16:34:10 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-16) 16:34:10 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-16) 16:42:08 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 10.769794986993169, 'trained_size': 80, 'success': True}
+(09-16) 16:42:09 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 2
+(09-16) 16:42:10 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-16) 16:42:10 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-16) 16:49:54 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 9.818507540225589, 'trained_size': 80, 'success': True}
+(09-16) 16:49:55 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 3
+(09-16) 16:49:56 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-16) 16:49:56 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-16) 16:57:45 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 9.472211596976564, 'trained_size': 80, 'success': True}
+(09-16) 16:57:46 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 4
+(09-16) 16:57:47 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-16) 16:57:47 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-16) 17:05:30 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 8.850211667612308, 'trained_size': 80, 'success': True}
+(09-16) 17:05:31 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 5
+(09-16) 17:05:32 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-16) 17:05:32 INFO     [executor.py:584] testing_handler: after select_dataset
+(09-16) 17:05:32 INFO     [model_test_module.py:66] TEST DEBUG: before model.to device=cpu
+(09-16) 17:05:32 INFO     [model_test_module.py:71] TEST DEBUG: after model.to
+(09-16) 17:05:32 INFO     [model_test_module.py:73] TEST DEBUG: after model.eval
+(09-16) 17:05:32 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:05:47 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:05:47 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:06:02 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:06:02 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:06:18 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:06:18 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:06:33 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:06:33 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:06:46 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:06:46 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:07:01 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:07:01 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:07:16 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:07:16 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:07:32 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:07:32 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:07:47 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:07:47 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:08:02 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:08:02 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:08:17 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:08:18 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:08:33 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:08:33 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:08:48 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:08:48 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:09:04 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:09:04 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:09:20 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:09:20 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:09:35 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:09:35 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:09:50 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:09:50 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:10:06 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:10:06 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:10:22 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:10:22 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:10:37 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:10:37 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:10:52 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:10:52 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:11:08 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:11:08 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:11:23 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:11:23 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:11:38 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:11:38 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:11:53 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:11:54 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:12:08 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:12:08 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:12:24 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:12:24 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:12:39 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:12:39 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:12:54 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:12:54 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:13:08 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:13:08 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:13:22 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:13:22 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:13:37 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:13:37 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:13:52 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:13:52 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:14:06 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:14:06 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:14:22 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:14:22 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:14:37 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:14:37 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:14:53 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:14:53 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:15:07 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:15:07 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:15:22 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:15:22 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:15:38 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:15:38 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:15:53 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:15:53 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:16:08 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:16:09 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:16:24 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:16:24 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:16:39 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:16:40 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:16:54 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:16:54 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:17:10 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:17:10 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:17:25 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:17:25 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:17:40 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:17:40 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:17:55 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:17:55 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:18:10 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:18:10 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:18:25 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:18:25 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:18:40 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:18:40 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:18:55 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:18:55 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:19:09 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:19:10 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:19:25 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:19:25 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:19:38 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:19:38 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:19:51 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:19:51 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:20:05 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:20:05 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:20:17 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:20:17 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:20:32 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:20:32 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:20:48 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:20:48 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:21:03 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:21:03 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:21:18 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:21:18 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:21:33 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:21:33 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:21:48 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:21:48 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:22:03 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:22:03 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:22:18 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:22:18 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:22:34 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:22:34 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:22:49 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:22:49 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:23:04 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:23:04 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:23:19 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:23:19 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:23:34 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:23:34 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:23:49 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:23:49 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(8, 256)
+(09-16) 17:24:05 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:24:05 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=Qwen/Qwen2.5-14B device=cpu data_shape=(5, 256)
+(09-16) 17:24:16 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-16) 17:24:16 INFO     [model_test_module.py:411] Rank 1: Test set: Average loss: 8.4513, Top-1 Accuracy: 4332.0/597 (0.0285), Top-5 Accuracy: 0.1023
+(09-16) 17:24:16 INFO     [torch_client.py:689] Test results: Eval_time 1123.4138, test_loss 8.4513, test_accuracy 2.85%, test_5_accuracy 10.23% 
+
+(09-16) 17:24:16 INFO     [executor.py:594] testing_handler: after client.test
+(09-16) 17:24:18 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-16) 17:24:18 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-16) 17:32:05 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 8.345640931629395, 'trained_size': 80, 'success': True}
+(09-16) 17:32:06 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 6
+(09-16) 17:32:07 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-16) 17:32:07 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-16) 17:39:49 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 8.11902013020459, 'trained_size': 80, 'success': True}
+(09-16) 17:39:50 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 7
+(09-16) 17:39:52 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-16) 17:39:52 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-16) 17:47:43 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 7.9103801097060575, 'trained_size': 80, 'success': True}
+(09-16) 17:47:44 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 8
+(09-16) 17:47:45 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-16) 17:47:45 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-16) 17:55:35 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 7.799433395499759, 'trained_size': 80, 'success': True}
+(09-16) 17:55:36 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 9
+(09-16) 17:55:37 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-16) 17:55:37 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-16) 18:03:30 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 7.727275445434571, 'trained_size': 80, 'success': True}
+(09-16) 18:03:32 INFO     [executor.py:469] Terminating the executor ...
+(09-16) 18:03:32 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%

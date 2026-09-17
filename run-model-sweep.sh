@@ -1,4 +1,4 @@
-u!/usr/bin/env bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 
@@ -59,12 +59,12 @@ IMAGE="${IMAGE:-fedscale-lora-dev}"
 NUM_PARTICIPANTS="${NUM_PARTICIPANTS:-1}"
 NUM_EXECUTORS="${NUM_EXECUTORS:-1}"
 
-ROUNDS="${ROUNDS:-1}"
-LOCAL_STEPS="${LOCAL_STEPS:-1}"
+ROUNDS="${ROUNDS:-10}"
+LOCAL_STEPS="${LOCAL_STEPS:-10}"
 
-CPU_COUNTS="${CPU_COUNTS:-8}"
+CPU_COUNTS="${CPU_COUNTS:-28}"
 
-BATCH_SIZE=(4)
+BATCH_SIZE=(8)
 
 # For debugging:
 #   EVAL_INTERVAL=999999
@@ -78,10 +78,18 @@ EVAL_INTERVAL="${EVAL_INTERVAL:-5}"
 # Expected values:
 #   0 = disabled
 #   1 = enabled
-SAVE_CHECKPOINT="${SAVE_CHECKPOINT:-1}"
+SAVE_CHECKPOINT="${SAVE_CHECKPOINT:-0}"
 
-TEST_RATIO="${TEST_RATIO:-0.1}"
-TEST_BSZ="${TEST_BSZ:-2}"
+# Whether to clear the Hugging Face cache between runs.
+#
+# 0 = keep cache contents between runs
+# 1 = wipe cache contents before every run after the first
+CLEAR_HF_CACHE_BETWEEN_RUNS="${CLEAR_HF_CACHE_BETWEEN_RUNS:-1}"
+
+HF_CACHE_DIR="${HF_CACHE_DIR:-/users/leping/ssd/rachs/huggingface-cache}"
+
+TEST_RATIO="${TEST_RATIO:-0.01}"
+TEST_BSZ="${TEST_BSZ:-8}"
 
 PORT_COUNTER=20010
 # ------------------------------------------------------------
@@ -95,11 +103,11 @@ MODELS=(
     #"bert-large-uncased"
 
     # Decoder-only causal language models
-    "meta-llama/Llama-3.1-8B"
+   # "meta-llama/Llama-3.1-8B"
     #"meta-llama/Llama-3.2-1B"
 
     "Qwen/Qwen2.5-14B"
-    "Qwen/Qwen2.5-32B"
+    #"Qwen/Qwen2.5-32B"
 
 )
 
@@ -140,7 +148,40 @@ if [ -z "${EXPERIMENT_DIR:-}" ]; then
 fi
 
 mkdir -p "${EXPERIMENT_DIR}"
-mkdir -p "${PROJECT_DIR}/huggingface-cache"
+mkdir -p "${HF_CACHE_DIR}"
+
+wipe_hf_cache() {
+    if [ "${CLEAR_HF_CACHE_BETWEEN_RUNS}" != "1" ]; then
+        return
+    fi
+
+    local cache_target
+    cache_target="$(readlink -f "${HF_CACHE_DIR}")"
+
+    if [ -z "${cache_target}" ] || [ "${cache_target}" = "/" ]; then
+        echo "ERROR: refusing to clear invalid Hugging Face cache path: ${cache_target}" >&2
+        exit 1
+    fi
+
+    echo
+    echo "============================================================"
+    echo "Clearing Hugging Face cache"
+    echo "============================================================"
+    echo "Role : ${ROLE}"
+    echo "Cache: ${cache_target}"
+
+    mkdir -p "${cache_target}"
+
+    sudo find "${cache_target}" \
+        -mindepth 1 \
+        -maxdepth 1 \
+        -exec rm -rf -- {} +
+
+    echo "Hugging Face cache cleared."
+    echo "============================================================"
+}
+
+RUN_INDEX=0
 
 PROGRESS_LOG="${EXPERIMENT_DIR}/progress.log"
 CONFIG_FILE="${EXPERIMENT_DIR}/sweep-config.txt"
@@ -168,7 +209,9 @@ LOCAL_STEPS=${LOCAL_STEPS}
 CPU_COUNTS=$(printf '%s ' "${CPU_COUNTS}")
 
 EVAL_INTERVAL=${EVAL_INTERVAL}
-#SAVE_CHECKPOINT=${SAVE_CHECKPOINT}
+SAVE_CHECKPOINT=${SAVE_CHECKPOINT}
+CLEAR_HF_CACHE_BETWEEN_RUNS=${CLEAR_HF_CACHE_BETWEEN_RUNS}
+HF_CACHE_DIR=${HF_CACHE_DIR}
 
 MODELS:
 $(printf '  %s\n' "${MODELS[@]}")
@@ -197,6 +240,8 @@ echo "Local steps      : ${LOCAL_STEPS}"
 echo "CPU counts       : ${CPU_COUNTS}"
 echo "Eval interval    : ${EVAL_INTERVAL}"
 echo "Save checkpoints : ${SAVE_CHECKPOINT}"
+echo "Clear HF cache   : ${CLEAR_HF_CACHE_BETWEEN_RUNS}"
+echo "HF cache         : ${HF_CACHE_DIR}"
 echo "Output           : ${EXPERIMENT_DIR}"
 echo "============================================================"
 
@@ -364,62 +409,105 @@ for model in "${MODELS[@]}"; do
         echo "Output         : ${run_dir}"
         echo "============================================================"
 
-
-        # ----------------------------------------------------
-        # Run FedScale container
+	# ----------------------------------------------------
+        # Run FedScale
+        #
+        # Aggregator: Docker
+        # Executor  : native host + Sparrow/DCPU
         # ----------------------------------------------------
 
         set +e
 
-        sudo docker run \
-            --rm \
-            --network host \
-            --shm-size=8g \
-            --cpus="${CPU_COUNTS}" \
-            \
-            -v "${FEDSCALE_DIR}:/opt/FedScale" \
-            -v "${run_dir}:/workspace/results" \
-            -v "${PROJECT_DIR}/run-albert.sh:/workspace/run-transformer.sh:ro" \
-            -v "${PROJECT_DIR}/huggingface-cache:/root/.cache/huggingface" \
-            \
-            -e PYTHONPATH=/opt/FedScale \
-            -e HF_TOKEN="${HF_TOKEN}" \
-            \
-            -e HF_HUB_DOWNLOAD_TIMEOUT=120 \
-            -e HF_HUB_ETAG_TIMEOUT=120 \
-            \
-            -e OMP_NUM_THREADS="${CPU_COUNTS}" \
-            -e MKL_NUM_THREADS="${CPU_COUNTS}" \
-            -e OPENBLAS_NUM_THREADS="${CPU_COUNTS}" \
-            -e NUMEXPR_NUM_THREADS="${CPU_COUNTS}" \
-            \
-            -e NUM_EXECUTORS="${NUM_EXECUTORS}" \
-            -e NUM_PARTICIPANTS="${NUM_PARTICIPANTS}" \
-            -e ROUNDS="${ROUNDS}" \
-            -e LOCAL_STEPS="${LOCAL_STEPS}" \
-            \
-            -e MODEL="${model}" \
-            -e METHOD="${method}" \
-            -e TOPK_RATIO="${topk_ratio}" \
-            -e TEST_RATIO="${TEST_RATIO}" \
-            -e TEST_BSZ="${TEST_BSZ}" \
-	    -e BATCH_SIZE="${BATCH_S}" \
-            \
-            -e PS_IP="${AGGREGATOR_IP}" \
-            -e PS_PORT="${PS_PORT}" \
-            -e EVAL_INTERVAL="${EVAL_INTERVAL}" \
-            \
-            -e RUN_NAME="${run_name}" \
-            -e RESULTS=/workspace/results \
-            \
-            -e GEMM_TRACE_DIR=/workspace/results \
-            -e GEMM_TRACE_METHOD="${method}" \
-            -e OPERATOR_PROFILE_DIR=/workspace/results \
-            \
-            "${IMAGE}" \
-            bash /workspace/run-transformer.sh "${ROLE}"
+        if [ "${ROLE}" = "executor" ]; then
 
-        exit_code=$?
+            USE_DCPU=True \
+            DCPU_FRONTEND_SOCK=/tmp/dgemm-fe.sock \
+	    DCPU_TRACE_MM=1 \
+	    HF_HOME="${HF_CACHE_DIR}" \
+            PROJECT_DIR="${PROJECT_DIR}" \
+            FEDSCALE_DIR="${FEDSCALE_DIR}" \
+            NUM_EXECUTORS="${NUM_EXECUTORS}" \
+            NUM_PARTICIPANTS="${NUM_PARTICIPANTS}" \
+            ROUNDS="${ROUNDS}" \
+            LOCAL_STEPS="${LOCAL_STEPS}" \
+            CPU_COUNTS="${CPU_COUNTS}" \
+            OMP_NUM_THREADS="${CPU_COUNTS}" \
+            MKL_NUM_THREADS="${CPU_COUNTS}" \
+            OPENBLAS_NUM_THREADS="${CPU_COUNTS}" \
+            NUMEXPR_NUM_THREADS="${CPU_COUNTS}" \
+            MODEL="${model}" \
+            METHOD="${method}" \
+            TOPK_RATIO="${topk_ratio}" \
+            TEST_RATIO="${TEST_RATIO}" \
+            TEST_BSZ="${TEST_BSZ}" \
+            BATCH_SIZE="${BATCH_S}" \
+            PS_IP="${AGGREGATOR_IP}" \
+            PS_PORT="${PS_PORT}" \
+            EVAL_INTERVAL="${EVAL_INTERVAL}" \
+            SAVE_CHECKPOINT="${SAVE_CHECKPOINT}" \
+            RUN_NAME="${run_name}" \
+            RESULTS="${run_dir}" \
+            GEMM_TRACE_DIR="${run_dir}" \
+            GEMM_TRACE_METHOD="${method}" \
+            OPERATOR_PROFILE_DIR="${run_dir}" \
+            "${PROJECT_DIR}/run-sparrow-fedscale.sh" executor
+
+            exit_code=$?
+
+        else
+
+            sudo docker run \
+                --rm \
+                --network host \
+                --shm-size=8g \
+                --cpus="${CPU_COUNTS}" \
+                \
+                -v "${FEDSCALE_DIR}:/opt/FedScale" \
+                -v "${run_dir}:/workspace/results" \
+                -v "${PROJECT_DIR}/run-albert.sh:/workspace/run-transformer.sh:ro" \
+                -v "${HF_CACHE_DIR}:/root/.cache/huggingface" \
+		\
+                -e PYTHONPATH=/opt/FedScale \
+                -e HF_TOKEN="${HF_TOKEN}" \
+                \
+                -e HF_HUB_DOWNLOAD_TIMEOUT=120 \
+                -e HF_HUB_ETAG_TIMEOUT=120 \
+                \
+                -e OMP_NUM_THREADS="${CPU_COUNTS}" \
+                -e MKL_NUM_THREADS="${CPU_COUNTS}" \
+                -e OPENBLAS_NUM_THREADS="${CPU_COUNTS}" \
+                -e NUMEXPR_NUM_THREADS="${CPU_COUNTS}" \
+                \
+                -e NUM_EXECUTORS="${NUM_EXECUTORS}" \
+                -e NUM_PARTICIPANTS="${NUM_PARTICIPANTS}" \
+                -e ROUNDS="${ROUNDS}" \
+                -e LOCAL_STEPS="${LOCAL_STEPS}" \
+                \
+                -e MODEL="${model}" \
+                -e METHOD="${method}" \
+                -e TOPK_RATIO="${topk_ratio}" \
+                -e TEST_RATIO="${TEST_RATIO}" \
+                -e TEST_BSZ="${TEST_BSZ}" \
+                -e BATCH_SIZE="${BATCH_S}" \
+                \
+                -e PS_IP="${AGGREGATOR_IP}" \
+                -e PS_PORT="${PS_PORT}" \
+                -e EVAL_INTERVAL="${EVAL_INTERVAL}" \
+                -e SAVE_CHECKPOINT="${SAVE_CHECKPOINT}" \
+                \
+                -e RUN_NAME="${run_name}" \
+                -e RESULTS=/workspace/results \
+                \
+                -e GEMM_TRACE_DIR=/workspace/results \
+                -e GEMM_TRACE_METHOD="${method}" \
+                -e OPERATOR_PROFILE_DIR=/workspace/results \
+                \
+                "${IMAGE}" \
+                bash /workspace/run-transformer.sh "${ROLE}"
+
+            exit_code=$?
+
+        fi
 
         set -e
 
@@ -674,3 +762,4 @@ echo
 echo "EXPERIMENT_DIR=${EXPERIMENT_DIR} \\"
 echo "./run-model-sweep.sh ${ROLE}"
 echo
+

@@ -1,0 +1,384 @@
+(09-17) 14:51:43 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 14:51:43 INFO     [fllibs.py:190] Initializing the model ...
+(09-17) 14:51:44 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-3.1-8B/resolve/main/config.json "HTTP/1.1 401 Unauthorized"
+(09-17) 14:51:44 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-3.1-8B/resolve/main/tokenizer_config.json "HTTP/1.1 401 Unauthorized"
+(09-17) 14:51:45 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/meta-llama/Llama-3.1-8B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+(09-17) 14:51:45 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/meta-llama/Llama-3.1-8B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+(09-17) 14:51:46 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/models/meta-llama/Llama-3.1-8B "HTTP/1.1 200 OK"
+(09-17) 14:51:46 INFO     [fllibs.py:231] Installed DGEMM shared arena as PyTorch CPU tensor allocator
+(09-17) 14:51:46 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-3.1-8B/resolve/main/config.json "HTTP/1.1 401 Unauthorized"
+(09-17) 14:51:46 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-3.1-8B/resolve/main/config.json "HTTP/1.1 401 Unauthorized"
+(09-17) 14:51:46 INFO     [_client.py:1025] HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-3.1-8B/resolve/main/generation_config.json "HTTP/1.1 401 Unauthorized"
+(09-17) 14:51:46 INFO     [fllibs.py:267] Migrating pretrained model storage into DGEMM shared arena
+(09-17) 14:52:00 INFO     [fllibs.py:173] DGEMM arena migration complete: 291 parameters, 0 buffers migrated; 14.958 GiB migrated, 0.000 GiB already arena-backed, 14.958 GiB total tensor storage
+(09-17) 14:52:01 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/organizations/kernels-community/overview "HTTP/1.1 200 OK"
+(09-17) 14:52:01 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/kernels/kernels-community/quantization-bitsandbytes/refs "HTTP/1.1 200 OK"
+(09-17) 14:52:01 INFO     [_client.py:1025] HTTP Request: GET https://huggingface.co/api/kernels/kernels-community/quantization-bitsandbytes/tree/20fadeb4b8240036fa59bacf96d8c7fbe531bddc/build?recursive=false&expand=false "HTTP/1.1 200 OK"
+(09-17) 14:52:03 INFO     [fllibs.py:356] DGEMM arena parameter coverage: 8033669120/8033669120 params (100.00%), 14.970/14.970 GiB (100.00% bytes)
+(09-17) 14:52:03 INFO     [fllibs.py:375] DCPU CPU-resident routing installed for 64 PEFT base Linear layers
+(09-17) 14:52:03 INFO     [executor.py:72] GEMM tracer attached to 289 Linear modules; output=/users/rachs/fedscale-lora/results/model-sweep-5-workers-2/llama_8b_lora_8bs/gemm-executor-1.jsonl
+(09-17) 14:52:03 INFO     [executor.py:121] (EXECUTOR:1) is setting up environ ...
+(09-17) 14:52:03 INFO     [nlp.py:120] Loading features from cached file /users/rachs/FedScale/benchmark/dataset/data/blog/train/meta-llama_Llama-3.1-8B_cached_lm_255
+(09-17) 14:52:07 INFO     [nlp.py:120] Loading features from cached file /users/rachs/FedScale/benchmark/dataset/data/blog/test/meta-llama_Llama-3.1-8B_cached_lm_255
+(09-17) 14:52:08 INFO     [executor.py:167] Data partitioner starts ...
+(09-17) 14:52:08 INFO     [divide_data.py:105] Randomly partitioning data, 500324 samples...
+(09-17) 14:52:08 INFO     [divide_data.py:105] Randomly partitioning data, 59550 samples...
+(09-17) 14:52:08 INFO     [executor.py:185] Data partitioner completes ...
+(09-17) 14:52:08 INFO     [channel_context.py:20] %%%%%%%%%% Opening grpc connection to 10.10.1.1 %%%%%%%%%%
+(09-17) 14:52:08 INFO     [executor.py:648] Start monitoring events ...
+(09-17) 14:52:09 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 1
+(09-17) 14:52:10 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 14:52:10 INFO     [executor.py:584] testing_handler: after select_dataset
+(09-17) 14:52:10 INFO     [model_test_module.py:66] TEST DEBUG: before model.to device=cpu
+(09-17) 14:52:10 INFO     [model_test_module.py:71] TEST DEBUG: after model.to
+(09-17) 14:52:10 INFO     [model_test_module.py:73] TEST DEBUG: after model.eval
+(09-17) 14:52:10 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:52:16 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:52:16 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:52:21 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:52:22 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:52:27 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:52:27 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:52:33 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:52:33 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:52:38 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:52:38 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:52:43 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:52:44 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:52:49 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:52:49 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:52:54 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:52:54 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:52:59 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:52:59 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:53:04 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:53:04 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:53:09 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:53:10 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:53:15 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:53:15 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:53:21 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:53:21 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:53:26 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:53:26 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:53:32 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:53:32 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:53:37 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:53:37 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:53:42 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:53:42 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:53:46 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:53:47 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:53:52 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:53:53 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:53:57 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:53:58 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:54:02 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:54:02 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:54:07 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:54:07 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:54:12 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:54:12 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:54:17 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:54:17 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:54:22 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:54:22 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:54:27 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:54:27 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:54:32 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:54:32 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:54:36 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:54:36 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:54:41 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:54:41 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:54:46 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:54:47 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:54:52 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:54:52 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:54:57 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:54:57 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:55:03 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:55:03 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:55:08 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:55:08 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:55:14 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:55:14 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:55:19 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:55:19 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:55:24 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:55:24 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:55:29 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:55:29 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:55:34 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:55:34 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:55:39 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:55:39 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:55:45 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:55:45 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:55:50 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:55:50 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:55:55 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:55:55 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:56:00 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:56:00 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:56:05 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:56:05 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:56:11 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:56:11 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:56:16 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:56:17 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:56:22 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:56:22 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:56:27 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:56:27 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:56:33 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:56:33 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:56:38 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:56:38 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:56:44 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:56:44 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:56:50 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:56:50 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:56:56 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:56:56 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:57:01 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:57:01 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:57:06 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:57:06 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:57:11 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:57:12 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:57:17 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:57:17 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:57:22 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:57:22 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:57:28 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:57:28 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:57:33 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:57:33 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:57:39 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:57:39 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:57:44 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:57:44 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:57:49 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:57:50 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:57:55 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:57:55 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:58:00 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:58:00 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:58:04 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:58:04 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:58:10 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:58:10 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:58:15 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:58:15 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:58:20 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:58:20 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:58:25 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:58:25 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:58:30 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:58:30 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:58:35 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:58:35 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 14:58:40 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:58:40 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(3, 255)
+(09-17) 14:58:42 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 14:58:42 INFO     [model_test_module.py:411] Rank 1: Test set: Average loss: 2.9054, Top-1 Accuracy: 64008.0/595 (0.4235), Top-5 Accuracy: 0.6686
+(09-17) 14:58:42 INFO     [torch_client.py:689] Test results: Eval_time 391.8755, test_loss 2.9054, test_accuracy 42.35%, test_5_accuracy 66.86% 
+
+(09-17) 14:58:42 INFO     [executor.py:594] testing_handler: after client.test
+(09-17) 14:58:45 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 14:58:45 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-17) 15:02:30 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 2.7520683044035654, 'trained_size': 80, 'success': True}
+(09-17) 15:02:31 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 2
+(09-17) 15:02:32 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 15:02:32 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-17) 15:06:18 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 2.8597736605363777, 'trained_size': 80, 'success': True}
+(09-17) 15:06:19 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 3
+(09-17) 15:06:21 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 15:06:21 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-17) 15:10:08 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 2.897070050023805, 'trained_size': 80, 'success': True}
+(09-17) 15:10:09 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 4
+(09-17) 15:10:10 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 15:10:10 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-17) 15:13:52 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 2.8915769869599615, 'trained_size': 80, 'success': True}
+(09-17) 15:13:53 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 5
+(09-17) 15:13:54 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 15:13:54 INFO     [executor.py:584] testing_handler: after select_dataset
+(09-17) 15:13:54 INFO     [model_test_module.py:66] TEST DEBUG: before model.to device=cpu
+(09-17) 15:13:54 INFO     [model_test_module.py:71] TEST DEBUG: after model.to
+(09-17) 15:13:54 INFO     [model_test_module.py:73] TEST DEBUG: after model.eval
+(09-17) 15:13:54 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:13:59 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:13:59 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:14:05 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:14:05 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:14:10 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:14:11 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:14:16 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:14:16 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:14:22 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:14:22 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:14:27 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:14:27 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:14:32 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:14:32 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:14:37 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:14:37 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:14:43 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:14:43 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:14:48 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:14:48 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:14:54 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:14:54 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:15:01 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:15:01 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:15:06 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:15:06 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:15:11 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:15:11 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:15:16 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:15:17 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:15:22 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:15:22 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:15:27 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:15:28 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:15:33 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:15:33 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:15:39 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:15:39 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:15:45 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:15:45 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:15:50 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:15:50 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:15:56 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:15:56 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:16:01 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:16:01 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:16:06 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:16:06 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:16:11 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:16:11 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:16:16 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:16:16 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:16:21 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:16:21 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:16:26 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:16:26 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:16:31 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:16:31 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:16:37 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:16:37 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:16:42 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:16:42 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:16:47 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:16:47 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:16:52 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:16:52 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:16:57 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:16:57 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:17:02 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:17:02 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:17:07 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:17:07 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:17:12 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:17:12 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:17:17 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:17:17 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:17:23 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:17:23 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:17:28 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:17:28 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:17:33 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:17:33 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:17:39 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:17:39 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:17:44 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:17:44 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:17:49 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:17:49 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:17:55 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:17:55 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:18:00 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:18:00 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:18:05 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:18:05 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:18:10 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:18:10 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:18:14 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:18:14 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:18:19 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:18:19 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:18:25 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:18:25 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:18:30 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:18:30 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:18:34 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:18:35 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:18:40 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:18:40 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:18:45 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:18:46 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:18:51 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:18:52 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:18:58 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:18:58 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:19:03 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:19:03 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:19:09 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:19:09 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:19:14 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:19:14 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:19:19 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:19:19 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:19:24 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:19:24 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:19:29 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:19:29 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:19:34 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:19:34 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:19:40 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:19:40 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:19:45 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:19:45 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:19:50 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:19:50 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:19:56 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:19:56 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:20:01 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:20:01 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:20:06 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:20:06 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:20:11 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:20:11 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:20:15 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:20:16 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:20:21 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:20:21 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(8, 255)
+(09-17) 15:20:26 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:20:26 INFO     [model_test_module.py:219] TEST DEBUG: before model forward model=meta-llama/Llama-3.1-8B device=cpu data_shape=(3, 255)
+(09-17) 15:20:28 INFO     [model_test_module.py:231] TEST DEBUG: after model forward
+(09-17) 15:20:28 INFO     [model_test_module.py:411] Rank 1: Test set: Average loss: 2.8841, Top-1 Accuracy: 64364.0/595 (0.4259), Top-5 Accuracy: 0.6713
+(09-17) 15:20:28 INFO     [torch_client.py:689] Test results: Eval_time 394.5693, test_loss 2.8841, test_accuracy 42.59%, test_5_accuracy 67.13% 
+
+(09-17) 15:20:28 INFO     [executor.py:594] testing_handler: after client.test
+(09-17) 15:20:31 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 15:20:31 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-17) 15:24:13 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 2.971805741375123, 'trained_size': 80, 'success': True}
+(09-17) 15:24:14 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 6
+(09-17) 15:24:15 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 15:24:15 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-17) 15:27:56 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 2.8385106002683114, 'trained_size': 80, 'success': True}
+(09-17) 15:27:57 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 7
+(09-17) 15:27:58 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 15:27:58 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-17) 15:31:42 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 2.8643446612888193, 'trained_size': 80, 'success': True}
+(09-17) 15:31:43 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 8
+(09-17) 15:31:44 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 15:31:44 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-17) 15:35:26 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 2.8144693298508305, 'trained_size': 80, 'success': True}
+(09-17) 15:35:27 INFO     [executor.py:914] Simulated aggregation: retaining locally resident model for round 9
+(09-17) 15:35:29 INFO     [torch_client.py:56] TorchClient device selection: use_dcpu=True use_cuda=False device=cpu
+(09-17) 15:35:29 INFO     [torch_client.py:93] Start to train (CLIENT: 1) ...
+(09-17) 15:39:14 INFO     [torch_client.py:191] Training of (CLIENT: 1) completes, {'client_id': 1, 'moving_loss': 2.858459648231324, 'trained_size': 80, 'success': True}
+(09-17) 15:39:15 INFO     [executor.py:469] Terminating the executor ...
+(09-17) 15:39:15 INFO     [channel_context.py:32] %%%%%%%%%% Closing grpc connection to the aggregator %%%%%%%%%%
