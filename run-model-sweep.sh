@@ -6,7 +6,7 @@ set -euo pipefail
 # Distributed role
 # ------------------------------------------------------------
 
-ROLE="${1:-all}"
+ROLE="${1:-executor}"
 
 case "${ROLE}" in
     all|aggregator|executor)
@@ -49,7 +49,7 @@ AGGREGATOR_IP="${AGGREGATOR_IP:-127.0.0.1}"
 
 PROJECT_DIR="${PROJECT_DIR:-/users/rachs/fedscale-lora}"
 FEDSCALE_DIR="${FEDSCALE_DIR:-/users/rachs/FedScale}"
-IMAGE="${IMAGE:-fedscale-lora-dev}"
+IMAGE="${IMAGE:-fedscale-lora:torch113}"
 
 
 # ------------------------------------------------------------
@@ -84,9 +84,9 @@ SAVE_CHECKPOINT="${SAVE_CHECKPOINT:-0}"
 #
 # 0 = keep cache contents between runs
 # 1 = wipe cache contents before every run after the first
-CLEAR_HF_CACHE_BETWEEN_RUNS="${CLEAR_HF_CACHE_BETWEEN_RUNS:-1}"
+CLEAR_HF_CACHE_BETWEEN_RUNS="${CLEAR_HF_CACHE_BETWEEN_RUNS:-0}"
 
-HF_CACHE_DIR="${HF_CACHE_DIR:-/users/leping/ssd/rachs/huggingface-cache}"
+HF_CACHE_DIR="${HF_CACHE_DIR:-/users/rachs/ssd/huggingface-cache}"
 
 TEST_RATIO="${TEST_RATIO:-0.01}"
 TEST_BSZ="${TEST_BSZ:-8}"
@@ -103,11 +103,11 @@ MODELS=(
     #"bert-large-uncased"
 
     # Decoder-only causal language models
-   # "meta-llama/Llama-3.1-8B"
+    #"meta-llama/Llama-3.1-8B"
     #"meta-llama/Llama-3.2-1B"
 
+    "Qwen/Qwen2.5-32B"
     "Qwen/Qwen2.5-14B"
-    #"Qwen/Qwen2.5-32B"
 
 )
 
@@ -123,8 +123,8 @@ MODELS=(
 
 EXPERIMENTS=(
     # "full:1.0"
-    "lora:1.0"
-    #"qlora:1.0"
+    #"lora:1.0"
+    "qlora:1.0"
     # "topk:0.10"
     # "topk:0.01"
 )

@@ -30,7 +30,7 @@ PROJECT_DIR="${PROJECT_DIR:-${HOME}/fedscale-lora}"
 FEDSCALE_DIR="${FEDSCALE_DIR:-${HOME}/FedScale}"
 BASE_RUNNER="${BASE_RUNNER:-${PROJECT_DIR}/run-albert.sh}"
 
-USE_DCPU="${USE_DCPU:-False}"
+USE_DCPU="${USE_DCPU:-TRUE}"
 
 DCPU_FRONTEND_SOCK="${DCPU_FRONTEND_SOCK:-/tmp/dgemm-fe.sock}"
 DCPU_TRACE_MM="${DCPU_TRACE_MM:-1}"
@@ -57,7 +57,7 @@ PS_PORT="${PS_PORT:-20010}"
 RUN_NAME="${RUN_NAME:-fedscale_llama_1b_${METHOD}}"
 RESULTS="${RESULTS:-${PROJECT_DIR}/results/${RUN_NAME}-$(date -u +%Y%m%dT%H%M%SZ)}"
 
-VENV_PYTHON="${VENV_PYTHON:-/users/rachs/.venv/qlora/bin/python}"
+VENV_PYTHON="${VENV_PYTHON:-/users/rachs/.venv/dcpu/bin/python}"
 
 die() {
     echo "ERROR: $*" >&2
@@ -156,7 +156,7 @@ changes = [
     (
         "    --use_cuda False\n",
         '    --use_cuda False\n'
-        '    --use_dcpu "${USE_DCPU:-False}"\n'
+        '    --use_dcpu True\n'
     ),
 ]
 

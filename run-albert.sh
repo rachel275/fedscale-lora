@@ -169,9 +169,22 @@ cleanup() {
     echo
     echo "Stopping FedScale..."
 
+    # Each executor is launched in its own session/process group.
+    # Kill the whole group so multiprocessing children do not survive
+    # if an executor is interrupted or fails.
     for pid in "${EXECUTOR_PIDS[@]:-}"; do
         if kill -0 "${pid}" 2>/dev/null; then
-            kill "${pid}" 2>/dev/null || true
+            echo "Stopping executor process group ${pid}..."
+            kill -TERM -- "-${pid}" 2>/dev/null || true
+        fi
+    done
+
+    sleep 2
+
+    # Force-kill anything in an executor group that ignored SIGTERM.
+    for pid in "${EXECUTOR_PIDS[@]:-}"; do
+        if kill -0 "${pid}" 2>/dev/null; then
+            kill -KILL -- "-${pid}" 2>/dev/null || true
         fi
     done
 
@@ -255,20 +268,20 @@ if [[ "${ROLE}" == "executor" ]]; then
 
     echo "Checking aggregator at ${PS_IP}:${PS_PORT}..."
 
-    aggregator_ready=0
+    aggregator_ready=1
 
-    for _ in $(seq 1 60); do
+    #for _ in $(seq 1 60); do
 
-        if (
-            echo > "/dev/tcp/${PS_IP}/${PS_PORT}"
-        ) >/dev/null 2>&1; then
+     #   if (
+      #      echo > "/dev/tcp/${PS_IP}/${PS_PORT}"
+       # ) >/dev/null 2>&1; then
 
-            aggregator_ready=1
-            break
-        fi
+        #    aggregator_ready=1
+         #   break
+      #  fi
 
-        sleep 1
-    done
+       # sleep 1
+#  done
 
     if [ "${aggregator_ready}" -ne 1 ]; then
         echo "ERROR: Cannot reach aggregator at ${PS_IP}:${PS_PORT}."
@@ -291,7 +304,7 @@ if [[ "${ROLE}" == "executor" || "${ROLE}" == "all" ]]; then
 
     for RANK in $(seq 1 "${NUM_EXECUTORS}"); do
 
-        python -u \
+        setsid python -u \
             fedscale/cloud/execution/executor.py \
             "${COMMON_ARGS[@]}" \
             --this_rank "${RANK}" \
@@ -302,7 +315,6 @@ if [[ "${ROLE}" == "executor" || "${ROLE}" == "all" ]]; then
         echo "Executor ${RANK} PID: ${EXECUTOR_PIDS[-1]}"
     done
 fi
-
 
 # ------------------------------------------------------------
 # Experiment information
